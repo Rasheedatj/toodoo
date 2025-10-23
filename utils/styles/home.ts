@@ -109,18 +109,21 @@ export const homeStyles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingHorizontal: 4,
+    paddingHorizontal: 2,
   },
 
   providerInfoItem: {
     flexDirection: 'row',
     alignItems: 'center',
+    marginRight: 8,
   },
 
   providerInfoItemText: {
-    marginLeft: 6,
+    marginLeft: 2,
     color: '#A3A2A9',
+    fontSize: 12,
   },
+
   providerPrice: {
     color: '#A3A2A9',
     marginVertical: 12,

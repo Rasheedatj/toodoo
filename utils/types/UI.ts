@@ -40,3 +40,18 @@ export interface SuccessProp {
   description?: string;
   image?: ReactNode;
 }
+
+export interface ScreenHeaderProps {
+  title: string;
+  hasBell?: boolean;
+}
+
+export interface Booking {
+  id: string;
+  userAvatar: ReactNode;
+  name: string;
+  charge: number;
+  service: string;
+  location: string;
+  rating: number;
+}

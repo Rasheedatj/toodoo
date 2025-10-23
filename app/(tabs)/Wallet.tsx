@@ -1,13 +1,12 @@
 import Balance from '@/components/Balance';
 import RecentActivities from '@/components/RecentActivities';
+import ScreenHeader from '@/components/ScreenHeader';
 import WalletModal from '@/components/WalletModal';
 import { tabParentStyles } from '@/utils/styles';
-import { commonStyles } from '@/utils/styles/common';
 import { walletStyles } from '@/utils/styles/wallet';
 import { WalletAction } from '@/utils/types/UI';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
 import React, { useState } from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 
 const WalletScreen = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -19,17 +18,12 @@ const WalletScreen = () => {
   return (
     <View style={[tabParentStyles.container, walletStyles.container]}>
       <View style={walletStyles.box1}>
-        <View style={walletStyles.header}>
-          <Text style={commonStyles.previewHeaderText}>Wallet</Text>
-          <MaterialCommunityIcons
-            name='bell-outline'
-            size={32}
-            color={'#141B34'}
-          />
-        </View>
+        <ScreenHeader title='Wallet' />
         <Balance onOpenModal={handleOpenModal} onSetModal={handleSetModal} />
       </View>
+
       <RecentActivities />
+
       <WalletModal
         isOpen={isModalVisible}
         onClose={handleCloseModal}
