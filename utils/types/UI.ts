@@ -1,6 +1,9 @@
+import { ReactNode } from 'react';
+
 export interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
+  type?: string;
 }
 
 export interface RecentSearch {
@@ -23,4 +26,17 @@ export interface ActivityProp {
   type: string;
   amount: number;
   date: string;
+}
+
+export type WalletAction = 'withdraw' | 'deposit';
+
+export interface BalanceProp {
+  onOpenModal: () => void;
+  onSetModal: (type: 'withdraw' | 'deposit') => void;
+}
+
+export interface SuccessProp {
+  title?: string;
+  description?: string;
+  image?: ReactNode;
 }

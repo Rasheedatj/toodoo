@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { appColors } from '../constants/colors';
 
 export const commonStyles = StyleSheet.create({
   container: {
@@ -11,7 +12,8 @@ export const commonStyles = StyleSheet.create({
   formModal: {
     padding: 16,
     paddingTop: 35,
-    height: 400,
+    paddingBottom: 100,
+    // height: 400,
     backgroundColor: 'white',
     marginTop: 'auto',
     borderTopLeftRadius: 20,
@@ -52,5 +54,22 @@ export const commonStyles = StyleSheet.create({
 
   backText: {
     marginLeft: 8,
+  },
+  successTitle: {
+    textAlign: 'center',
+    marginBottom: 8,
+    fontWeight: 'bold',
+    fontSize: 32,
+    marginTop: 14,
+  },
+  successContainer: {
+    marginVertical: 28,
+  },
+  successImage: {
+    alignItems: 'center',
+  },
+  successDescription: {
+    textAlign: 'center',
+    color: appColors['text-gray'],
   },
 });

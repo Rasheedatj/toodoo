@@ -1,12 +1,15 @@
 import { commonStyles } from '@/utils/styles/common';
-import { walletStyles } from '@/utils/styles/wallet';
 import { ModalProps } from '@/utils/types/UI';
 import { BlurView } from 'expo-blur';
 import React from 'react';
-import { Modal, Text, TextInput, View } from 'react-native';
+import { Modal, View } from 'react-native';
 import Back from './Back';
+import Deposit from './Deposit';
+import Success from './Success';
+import Withdraw from './Withdraw';
 
-const WalletModal = ({ onClose, isOpen }: ModalProps) => {
+const WalletModal = ({ onClose, isOpen, type = 'deposit' }: ModalProps) => {
+  const isSuccessful = false;
   return (
     <Modal visible={isOpen} transparent={true}>
       <View style={{ backgroundColor: '#33333333', flex: 1 }}>
@@ -14,18 +17,15 @@ const WalletModal = ({ onClose, isOpen }: ModalProps) => {
           <View style={commonStyles.formModal}>
             <Back onClick={onClose} />
 
-            <View>
-              <Text style={walletStyles.modalTitle}>Deposit</Text>
-              <Text style={walletStyles.modaldescription}>
-                Deposit into your wallet
-              </Text>
-            </View>
-
-            <Text style={walletStyles.modalLabel}>Amount</Text>
-            <TextInput
-              style={walletStyles.modalInput}
-              placeholder='e.g 10,000'
-            />
+            {isSuccessful ? (
+              <Success
+                description={`NGN ${3000} has been withdrawn successfully.`}
+              />
+            ) : type === 'deposit' ? (
+              <Deposit />
+            ) : (
+              <Withdraw />
+            )}
           </View>
         </BlurView>
       </View>

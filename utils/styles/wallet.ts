@@ -92,6 +92,9 @@ export const walletStyles = StyleSheet.create({
     fontWeight: 'medium',
     fontSize: 16,
   },
+  modalContent: {
+    marginTop: 10,
+  },
   modalTitle: {
     marginTop: 20,
     marginBottom: 10,
@@ -101,8 +104,10 @@ export const walletStyles = StyleSheet.create({
   modaldescription: {
     color: '#6C7278',
   },
-  modalLabel: {
+  formItem: {
     marginTop: 35,
+  },
+  modalLabel: {
     marginBottom: 8,
     color: '#6C7278',
   },

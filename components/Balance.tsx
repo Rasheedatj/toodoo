@@ -1,8 +1,9 @@
 import { walletStyles } from '@/utils/styles/wallet';
+import { BalanceProp } from '@/utils/types/UI';
 import React from 'react';
 import { Button, Text, View } from 'react-native';
 
-const Balance = ({ onOpenModal }: { onOpenModal: () => void }) => {
+const Balance = ({ onOpenModal, onSetModal }: BalanceProp) => {
   return (
     <View style={walletStyles.balance}>
       <Text style={walletStyles.balanceHeader}>Your Balance</Text>
@@ -17,8 +18,20 @@ const Balance = ({ onOpenModal }: { onOpenModal: () => void }) => {
           marginTop: 10,
         }}
       >
-        <Button title='Deposit' onPress={onOpenModal} />
-        <Button title='Withdraw' onPress={onOpenModal} />
+        <Button
+          title='Deposit'
+          onPress={() => {
+            onOpenModal();
+            onSetModal('deposit');
+          }}
+        />
+        <Button
+          title='Withdraw'
+          onPress={() => {
+            onOpenModal();
+            onSetModal('withdraw');
+          }}
+        />
       </View>
     </View>
   );
