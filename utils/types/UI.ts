@@ -17,3 +17,10 @@ export interface Service {
   title: string;
   providers: number;
 }
+
+export interface ActivityProp {
+  id: string;
+  type: string;
+  amount: number;
+  date: string;
+}
