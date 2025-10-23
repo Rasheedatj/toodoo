@@ -4,6 +4,19 @@ export const commonStyles = StyleSheet.create({
   container: {
     marginBlock: 16,
   },
+  fullModal: {
+    padding: 16,
+    paddingTop: 65,
+  },
+  formModal: {
+    padding: 16,
+    paddingTop: 35,
+    height: 400,
+    backgroundColor: 'white',
+    marginTop: 'auto',
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+  },
 
   header: {
     fontWeight: 'medium',

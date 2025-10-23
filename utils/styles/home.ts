@@ -161,6 +161,7 @@ export const searchModalStyles = StyleSheet.create({
     padding: 16,
     paddingTop: 65,
   },
+
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
