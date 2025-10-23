@@ -4,6 +4,7 @@
     "slug": "toodoo",
     "version": "1.0.0",
     "orientation": "portrait",
+    "backgroundColor": "#5e0acc",
     "icon": "./assets/images/icon.png",
     "scheme": "toodoo",
     "userInterfaceStyle": "automatic",
