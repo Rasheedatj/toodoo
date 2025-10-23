@@ -7,3 +7,13 @@ export interface RecentSearch {
   id: string;
   title: string;
 }
+
+export interface BackProp {
+  onClick: () => void;
+}
+
+export interface Service {
+  id: string;
+  title: string;
+  providers: number;
+}

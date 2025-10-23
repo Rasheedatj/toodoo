@@ -5,6 +5,13 @@ export const commonStyles = StyleSheet.create({
     marginBlock: 16,
   },
 
+  header: {
+    fontWeight: 'medium',
+    fontSize: 20,
+    color: '#1A1C1E',
+    marginBottom: 10,
+  },
+
   previewHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',

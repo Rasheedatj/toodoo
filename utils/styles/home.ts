@@ -199,3 +199,33 @@ export const searchModalStyles = StyleSheet.create({
     flex: 1,
   },
 });
+
+export const serviceListStyles = StyleSheet.create({
+  container: {
+    marginTop: 24,
+  },
+  serviceList: {
+    marginTop: 30,
+  },
+  serviceItem: {
+    flexDirection: 'row',
+    padding: 20,
+    borderWidth: 1,
+    borderColor: '#E2E8F9',
+    borderRadius: 10,
+    marginBottom: 20,
+  },
+  serviceTitle: {
+    width: '50%',
+  },
+  availaible: {
+    alignItems: 'center',
+    flexDirection: 'row',
+  },
+  availableText: {
+    flexDirection: 'row',
+    marginLeft: 6,
+    color: '#A3A2A9',
+    fontSize: 13,
+  },
+});
