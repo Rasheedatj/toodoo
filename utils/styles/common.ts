@@ -72,4 +72,19 @@ export const commonStyles = StyleSheet.create({
     textAlign: 'center',
     color: appColors['text-gray'],
   },
+
+  formItem: {
+    marginTop: 35,
+  },
+  label: {
+    marginBottom: 8,
+    color: '#6C7278',
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: appColors.border,
+    padding: 12,
+    borderRadius: 10,
+    fontSize: 16,
+  },
 });

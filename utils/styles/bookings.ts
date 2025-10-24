@@ -7,7 +7,7 @@ export const bookingsStyle = StyleSheet.create({
     marginTop: 60,
   },
   menuItem: {
-    paddingRight: 20,
+    paddingHorizontal: 10,
     paddingBottom: 18,
     borderBottomWidth: 1,
     borderBottomColor: appColors.border,
@@ -32,17 +32,19 @@ export const bookingsStyle = StyleSheet.create({
     marginBottom: 20,
   },
   bookingImage: {
-    width: 87,
-    height: 87,
+    width: 80,
+    height: 80,
+    objectFit: 'contain',
   },
   bookingDetails: {
     flex: 1,
     marginLeft: 10,
   },
-  bookingName: {
+  bookingService: {
     fontWeight: 'semibold',
     fontSize: 18,
     color: '#333333',
+    textTransform: 'capitalize',
   },
   bookingChargeBox: {
     color: appColors['text-gray'],
@@ -53,5 +55,98 @@ export const bookingsStyle = StyleSheet.create({
     fontWeight: 'bold',
     color: appColors['text-gray'],
     paddingLeft: 10,
+  },
+  itemFooter: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  status: {
+    textTransform: 'capitalize',
+    marginRight: 8,
+    paddingVertical: 4,
+    paddingHorizontal: 10,
+    fontWeight: 'semibold',
+    borderRadius: 20,
+    textAlign: 'center',
+  },
+});
+
+export const bookingDetStyle = StyleSheet.create({
+  container: {
+    marginTop: 20,
+  },
+  service: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingBottom: 20,
+    borderBottomColor: appColors.border,
+    borderBottomWidth: 1,
+  },
+
+  serviceText: {
+    textTransform: 'capitalize',
+    fontWeight: 'semibold',
+    color: '#0E0E0E',
+    marginBottom: 10,
+    fontSize: 18,
+  },
+
+  serviceDate: {
+    color: appColors['text-gray'],
+  },
+
+  section: {
+    paddingTop: 20,
+    paddingBottom: 30,
+    borderBottomColor: appColors.border,
+    borderBottomWidth: 1,
+  },
+
+  sectionBoxTitle: {
+    fontSize: 16,
+    paddingBottom: 10,
+  },
+
+  sectionBox: {
+    flex: 1,
+  },
+
+  sectionBoxValue: {
+    color: appColors['text-gray'],
+  },
+
+  title: {
+    paddingBottom: 18,
+    fontWeight: 'medium',
+    fontSize: 16,
+  },
+
+  descriptionArticle: {
+    color: appColors['text-gray'],
+    fontSize: 13,
+    lineHeight: 20,
+  },
+
+  provider: {
+    marginTop: 20,
+  },
+  providerCard: {
+    flexDirection: 'row',
+    paddingInline: 10,
+    paddingTop: 10,
+  },
+});
+
+export const cancelStyles = StyleSheet.create({
+  title: {
+    paddingBottom: 10,
+    paddingTop: 20,
+    fontSize: 16,
+  },
+  warning: {
+    paddingBlock: 10,
+    color: appColors['text-gray'],
+    lineHeight: 19,
   },
 });

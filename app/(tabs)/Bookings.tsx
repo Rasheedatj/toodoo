@@ -8,86 +8,83 @@ import React, { useState } from 'react';
 import { FlatList, Image, Pressable, Text, View } from 'react-native';
 
 const bookingsMenu = [
-  { id: 1, title: 'In-Progress' },
-  { id: 2, title: 'Completed' },
-  { id: 3, title: 'Cancelled' },
+  { id: ' ', title: 'All' },
+  { id: 'pending', title: 'In-Progress' },
+  { id: 'completed', title: 'Completed' },
+  { id: 'cancelled', title: 'Cancelled' },
 ];
 
 const bookings: Booking[] = [
   {
     id: 'a',
-    userAvatar: (
+    serviceImage: (
       <Image
         style={bookingsStyle.bookingImage}
-        source={require('../../assets/images/user.png')}
+        source={require('../../assets/images/Vector.png')}
       />
     ),
-    name: 'Jane Doe',
     charge: 3000,
     location: 'Lagos, Nigeria',
-    rating: 5,
     service: 'laundry',
+    status: 'pending',
   },
   {
-    id: '15',
-    userAvatar: (
+    id: 'ab',
+    serviceImage: (
       <Image
         style={bookingsStyle.bookingImage}
-        source={require('../../assets/images/user.png')}
+        source={require('../../assets/images/Vector.png')}
       />
     ),
-    name: 'Jane Doe',
-    charge: 3000,
+    charge: 30000,
     location: 'Lagos, Nigeria',
-    rating: 5,
-    service: 'laundry',
+    service: 'cleaning',
+    status: 'completed',
   },
   {
-    id: '13',
-    userAvatar: (
+    id: 'abc',
+    serviceImage: (
       <Image
         style={bookingsStyle.bookingImage}
-        source={require('../../assets/images/user.png')}
+        source={require('../../assets/images/Vector.png')}
       />
     ),
-    name: 'Jane Doe',
-    charge: 3000,
+    charge: 30000,
     location: 'Lagos, Nigeria',
-    rating: 5,
-    service: 'laundry',
+    service: 'plumbing',
+    status: 'cancelled',
   },
   {
-    id: '133',
-    userAvatar: (
+    id: 'ab2c',
+    serviceImage: (
       <Image
         style={bookingsStyle.bookingImage}
-        source={require('../../assets/images/user.png')}
+        source={require('../../assets/images/Vector.png')}
       />
     ),
-    name: 'Jane Doe',
-    charge: 3000,
+    charge: 30000,
     location: 'Lagos, Nigeria',
-    rating: 5,
-    service: 'laundry',
+    service: 'plumbing',
+    status: 'completed',
   },
   {
-    id: '1fg3',
-    userAvatar: (
+    id: 'ab2d',
+    serviceImage: (
       <Image
         style={bookingsStyle.bookingImage}
-        source={require('../../assets/images/user.png')}
+        source={require('../../assets/images/Vector.png')}
       />
     ),
-    name: 'Jane Doe',
-    charge: 3000,
+    charge: 30000,
     location: 'Lagos, Nigeria',
-    rating: 5,
-    service: 'laundry',
+    service: 'plumbing',
+    status: 'pending',
   },
 ];
 
 const BookingsScreen = () => {
-  const [activeMenu, setActiveMenu] = useState(1);
+  const [activeMenu, setActiveMenu] = useState('pending');
+
   return (
     <View style={tabParentStyles.container}>
       <ScreenHeader title='Bookings' />
@@ -118,7 +115,11 @@ const BookingsScreen = () => {
       </View>
 
       <FlatList
-        data={bookings}
+        data={
+          activeMenu === ' '
+            ? bookings
+            : bookings.filter((item) => item.status === activeMenu)
+        }
         renderItem={(itemData) => <BookingItem booking={itemData.item} />}
         keyExtractor={(item) => item.id}
         showsVerticalScrollIndicator={false}

@@ -1,22 +1,25 @@
 import { bookingsStyle } from '@/utils/styles/bookings';
 import { homeStyles } from '@/utils/styles/home';
 import { Booking } from '@/utils/types/UI';
-import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import React from 'react';
 import { Text, View } from 'react-native';
+import Status from './Status';
 
 const BookingItem = ({ booking }: { booking: Booking }) => {
-  const { userAvatar, name, charge, location, rating, service } = booking;
+  const { serviceImage, status, charge, location, service } = booking;
   return (
     <View style={[bookingsStyle.bookingItem]}>
-      {userAvatar}
+      {serviceImage}
       <View style={bookingsStyle.bookingDetails}>
-        <Text style={bookingsStyle.bookingName}>{name}</Text>
+        <Text style={bookingsStyle.bookingService}>{service} service</Text>
         <Text style={bookingsStyle.bookingChargeBox}>
           Charge: <Text style={bookingsStyle.bookingCharge}>NGN{charge}</Text>{' '}
         </Text>
 
-        <View style={homeStyles.providerInfo}>
+        <View style={bookingsStyle.itemFooter}>
+          <Status status={status} />
+
           <View style={homeStyles.providerInfoItem}>
             <MaterialCommunityIcons
               name='map-marker-outline'
@@ -24,20 +27,6 @@ const BookingItem = ({ booking }: { booking: Booking }) => {
               size={14}
             />
             <Text style={homeStyles.providerInfoItemText}>{location}</Text>
-          </View>
-          <View style={homeStyles.providerInfoItem}>
-            <Ionicons name='basket-outline' color='#A3A2A9' size={14} />
-            <Text style={homeStyles.providerInfoItemText}>
-              {service} service
-            </Text>
-          </View>
-          <View style={homeStyles.providerInfoItem}>
-            <MaterialCommunityIcons
-              name='star-outline'
-              color='#A3A2A9'
-              size={14}
-            />
-            <Text style={homeStyles.providerInfoItemText}>{rating}(2)</Text>
           </View>
         </View>
       </View>

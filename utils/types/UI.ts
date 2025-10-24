@@ -12,7 +12,7 @@ export interface RecentSearch {
 }
 
 export interface BackProp {
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 export interface Service {
@@ -48,10 +48,25 @@ export interface ScreenHeaderProps {
 
 export interface Booking {
   id: string;
-  userAvatar: ReactNode;
-  name: string;
+  serviceImage: ReactNode;
   charge: number;
   service: string;
+  location?: string;
+  status: string;
+}
+
+interface Provider {
+  name: string;
+  userAvatar: ReactNode;
   location: string;
   rating: number;
+  rateAmount: number;
+  price: number;
+}
+
+export interface BookingDetails extends Booking {
+  description: string;
+  date: string;
+  address: string;
+  provider: Provider;
 }
