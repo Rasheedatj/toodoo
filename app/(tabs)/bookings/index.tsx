@@ -1,14 +1,14 @@
 import Plumbing from '@/assets/images/plumbing';
 import BookingItem from '@/components/BookingItem';
 import ScreenHeader from '@/components/ScreenHeader';
-import { appColors } from '@/utils/constants/colors';
+import TabMenu from '@/components/TabMenu';
 import { tabParentStyles } from '@/utils/styles';
 import { bookingsStyle } from '@/utils/styles/bookings';
-import { Booking } from '@/utils/types/UI';
+import { Booking, TabItem } from '@/utils/types/UI';
 import React, { useState } from 'react';
-import { FlatList, Pressable, Text, View } from 'react-native';
+import { FlatList, View } from 'react-native';
 
-const bookingsMenu = [
+const bookingsMenu: TabItem[] = [
   { id: ' ', title: 'All' },
   { id: 'pending', title: 'In-Progress' },
   { id: 'completed', title: 'Completed' },
@@ -64,31 +64,11 @@ const BookingsScreen = () => {
   return (
     <View style={tabParentStyles.container}>
       <ScreenHeader title='Bookings' />
-      <View style={bookingsStyle.menu}>
-        {bookingsMenu.map((item) => (
-          <Pressable
-            onPress={() => setActiveMenu(item.id)}
-            key={item.id}
-            style={[
-              bookingsStyle.menuItem,
-              activeMenu === item.id && {
-                borderBottomColor: appColors.primary,
-              },
-            ]}
-          >
-            <Text
-              style={[
-                bookingsStyle.menuTitle,
-                activeMenu === item.id && {
-                  color: appColors.primary,
-                },
-              ]}
-            >
-              {item.title}
-            </Text>
-          </Pressable>
-        ))}
-      </View>
+      <TabMenu
+        tabItems={bookingsMenu}
+        activeMenu={activeMenu}
+        setActiveMenu={setActiveMenu}
+      />
 
       <FlatList
         data={

@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { Dispatch, ReactNode, SetStateAction } from 'react';
 
 export interface ModalProps {
   isOpen: boolean;
@@ -90,4 +90,20 @@ export interface ProfileActionProp {
   title: string;
   text: string;
   rightElement?: ReactNode;
+}
+export interface TabItem {
+  id: string;
+  title: string;
+}
+export interface TabProps {
+  tabItems: TabItem[];
+  setActiveMenu: Dispatch<SetStateAction<string>>;
+  activeMenu: string;
+}
+
+export interface MessageProp {
+  id: string;
+  name: string;
+  title: string;
+  lastSent: string;
 }
