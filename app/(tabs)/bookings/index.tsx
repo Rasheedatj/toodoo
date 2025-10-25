@@ -1,3 +1,4 @@
+import Plumbing from '@/assets/images/plumbing';
 import BookingItem from '@/components/BookingItem';
 import ScreenHeader from '@/components/ScreenHeader';
 import { appColors } from '@/utils/constants/colors';
@@ -5,7 +6,7 @@ import { tabParentStyles } from '@/utils/styles';
 import { bookingsStyle } from '@/utils/styles/bookings';
 import { Booking } from '@/utils/types/UI';
 import React, { useState } from 'react';
-import { FlatList, Image, Pressable, Text, View } from 'react-native';
+import { FlatList, Pressable, Text, View } from 'react-native';
 
 const bookingsMenu = [
   { id: ' ', title: 'All' },
@@ -17,12 +18,7 @@ const bookingsMenu = [
 const bookings: Booking[] = [
   {
     id: 'a',
-    serviceImage: (
-      <Image
-        style={bookingsStyle.bookingImage}
-        source={require('../../../assets/images/Vector.png')}
-      />
-    ),
+    serviceImage: <Plumbing />,
     charge: 3000,
     location: 'Lagos, Nigeria',
     service: 'laundry',
@@ -30,12 +26,7 @@ const bookings: Booking[] = [
   },
   {
     id: 'ab',
-    serviceImage: (
-      <Image
-        style={bookingsStyle.bookingImage}
-        source={require('../../../assets/images/Vector.png')}
-      />
-    ),
+    serviceImage: <Plumbing />,
     charge: 30000,
     location: 'Lagos, Nigeria',
     service: 'cleaning',
@@ -43,12 +34,7 @@ const bookings: Booking[] = [
   },
   {
     id: 'abc',
-    serviceImage: (
-      <Image
-        style={bookingsStyle.bookingImage}
-        source={require('../../../assets/images/Vector.png')}
-      />
-    ),
+    serviceImage: <Plumbing />,
     charge: 30000,
     location: 'Lagos, Nigeria',
     service: 'plumbing',
@@ -56,12 +42,7 @@ const bookings: Booking[] = [
   },
   {
     id: 'ab2c',
-    serviceImage: (
-      <Image
-        style={bookingsStyle.bookingImage}
-        source={require('../../../assets/images/Vector.png')}
-      />
-    ),
+    serviceImage: <Plumbing />,
     charge: 30000,
     location: 'Lagos, Nigeria',
     service: 'plumbing',
@@ -69,12 +50,7 @@ const bookings: Booking[] = [
   },
   {
     id: 'ab2d',
-    serviceImage: (
-      <Image
-        style={bookingsStyle.bookingImage}
-        source={require('../../../assets/images/Vector.png')}
-      />
-    ),
+    serviceImage: <Plumbing />,
     charge: 30000,
     location: 'Lagos, Nigeria',
     service: 'plumbing',

@@ -14,7 +14,8 @@ const ServiceItem = ({ service }: { service: Service }) => {
       <View style={serviceListStyles.availaible}>
         <FontAwesome5 name='dot-circle' size={16} color={appColors.primary} />
         <Text style={serviceListStyles.availableText}>
-          {providers} {providers > 1 ? 'Providers' : 'Provider'} Available
+          {providers} {providers && providers > 1 ? 'Providers' : 'Provider'}{' '}
+          Available
         </Text>
       </View>
     </View>

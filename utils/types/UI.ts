@@ -18,7 +18,10 @@ export interface BackProp {
 export interface Service {
   id: string;
   title: string;
-  providers: number;
+  providers?: number;
+  rating: number;
+  rateAmount: number;
+  price: number;
 }
 
 export interface ActivityProp {
@@ -55,20 +58,22 @@ export interface Booking {
   status: string;
 }
 
-interface Provider {
+export interface ProviderProps {
+  id: string;
   name: string;
   userAvatar: ReactNode;
   location: string;
   rating: number;
   rateAmount: number;
   price: number;
+  service?: string;
 }
 
 export interface BookingDetails extends Booking {
   description: string;
   date: string;
   address: string;
-  provider: Provider;
+  provider: ProviderProps;
 }
 type ButtonVariant = 'primary' | 'outline';
 
@@ -78,4 +83,11 @@ export interface ButtonProps {
   variant?: ButtonVariant;
   style?: any;
   icon?: ReactNode;
+}
+
+export interface ProfileActionProp {
+  icon: ReactNode;
+  title: string;
+  text: string;
+  rightElement?: ReactNode;
 }

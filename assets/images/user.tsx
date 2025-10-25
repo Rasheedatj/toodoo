@@ -1,6 +1,6 @@
 import Svg, { Circle, Defs, Image, Pattern, Use } from 'react-native-svg';
 
-export default function SvgComponent(props: any) {
+export default function User(props: any) {
   return (
     <Svg
       width='70'

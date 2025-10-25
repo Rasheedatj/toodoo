@@ -149,15 +149,16 @@ export const homeStyles = StyleSheet.create({
   bookedHeader: {
     fontWeight: 'semibold',
     fontSize: 16,
+    textTransform: 'capitalize',
   },
   bookedRating: {
     marginVertical: 9,
     color: appColors['text-gray'],
-    fontSize: 10,
+    fontSize: 12,
   },
   bookedPrice: {
     color: appColors['text-gray'],
-    fontSize: 10,
+    fontSize: 12,
   },
 });
 

@@ -1,3 +1,4 @@
+import SvgComponent from '@/assets/images/user';
 import { bookingDetStyle, bookingsStyle } from '@/utils/styles/bookings';
 import { commonStyles } from '@/utils/styles/common';
 import { homeStyles } from '@/utils/styles/home';
@@ -73,7 +74,7 @@ const Booking = ({ booking }: { booking: BookingDetails }) => {
           <Text style={bookingDetStyle.title}>Service Provider</Text>
 
           <View style={bookingDetStyle.providerCard}>
-            {provider.userAvatar}
+            <SvgComponent />
             <View style={bookingsStyle.bookingDetails}>
               <Text style={bookingsStyle.bookingService}>{provider.name}</Text>
               <Text style={bookingsStyle.bookingChargeBox}>
@@ -111,7 +112,7 @@ const Booking = ({ booking }: { booking: BookingDetails }) => {
                 Alert.alert('Completed!', 'This booking is now completed', [
                   {
                     text: 'Ok',
-                    onPress: () => router.push('/(tabs)/Bookings'),
+                    onPress: () => router.push('/(tabs)/bookings'),
                   },
                 ])
               }

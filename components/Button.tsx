@@ -16,11 +16,11 @@ const Button = ({
     >
       <Pressable
         onPress={onPress}
-        android_ripple={{ color: '#640233' }}
         style={({ pressed }) => [
           pressed && styles.pressed,
           styles.buttonInnerContainer,
         ]}
+        android_ripple={{ color: 'red' }}
       >
         <View style={styles.icon}>{icon}</View>
         <Text style={[styles.buttonText, styles[`${variant}Text`]]}>
@@ -46,6 +46,7 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     flexDirection: 'row',
     justifyContent: 'center',
+    alignItems: 'center',
   },
 
   icon: {

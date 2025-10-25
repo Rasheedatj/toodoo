@@ -1,11 +1,16 @@
+import ProfileHero from '@/components/ProfileHero';
+import ProfileOptions from '@/components/ProfileOptions';
+import ScreenHeader from '@/components/ScreenHeader';
 import { tabParentStyles } from '@/utils/styles';
 import React from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 
 const ProfileScreen = () => {
   return (
     <View style={tabParentStyles.container}>
-      <Text>Profile</Text>
+      <ScreenHeader title='Profile' />
+      <ProfileHero />
+      <ProfileOptions />
     </View>
   );
 };

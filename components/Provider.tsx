@@ -1,12 +1,14 @@
+import { appColors } from '@/utils/constants/colors';
+import { commonStyles } from '@/utils/styles/common';
+import { homeStyles } from '@/utils/styles/home';
+import { ProviderProps } from '@/utils/types/UI';
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
-import React from 'react';
 import { Image, Text, View } from 'react-native';
 import Button from './Button';
-import { appColors } from '@/utils/constants/colors';
-import { homeStyles } from '@/utils/styles/home';
-import { commonStyles } from '@/utils/styles/common';
 
-const Provider = () => {
+const Provider = ({ provider }: { provider: ProviderProps }) => {
+  const { name, userAvatar, price, location, service, rateAmount, rating } =
+    provider;
   return (
     <View style={[commonStyles.card, homeStyles.providerCard]}>
       <Image
@@ -19,8 +21,8 @@ const Provider = () => {
         }}
       />
       <View style={homeStyles.bookedServiceDescription}>
-        <Text style={commonStyles.header}>Oghechi Kanu</Text>
-        <Text style={homeStyles.providerPrice}>From NGN 3,000.00</Text>
+        <Text style={commonStyles.header}>{name}</Text>
+        <Text style={homeStyles.providerPrice}>From NGN {price}</Text>
 
         <View style={homeStyles.providerInfo}>
           <View style={homeStyles.providerInfoItem}>
@@ -29,11 +31,11 @@ const Provider = () => {
               color='#A3A2A9'
               size={14}
             />
-            <Text style={homeStyles.providerInfoItemText}>Lagos Nigeria</Text>
+            <Text style={homeStyles.providerInfoItemText}>{location}</Text>
           </View>
           <View style={homeStyles.providerInfoItem}>
             <Ionicons name='basket-outline' color='#A3A2A9' size={14} />
-            <Text style={homeStyles.providerInfoItemText}>Laundry</Text>
+            <Text style={homeStyles.providerInfoItemText}>{service}</Text>
           </View>
           <View style={homeStyles.providerInfoItem}>
             <MaterialCommunityIcons
@@ -41,7 +43,9 @@ const Provider = () => {
               color='#A3A2A9'
               size={14}
             />
-            <Text style={homeStyles.providerInfoItemText}>4.7(2)</Text>
+            <Text style={homeStyles.providerInfoItemText}>
+              {rating}({rateAmount})
+            </Text>
           </View>
         </View>
       </View>
