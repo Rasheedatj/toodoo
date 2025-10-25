@@ -36,7 +36,7 @@ export const commonStyles = StyleSheet.create({
 
   previewHeaderText: {
     fontWeight: 'bold',
-    fontSize: 20,
+    fontSize: 24,
     color: '#3D3F33',
   },
 
@@ -86,5 +86,11 @@ export const commonStyles = StyleSheet.create({
     padding: 12,
     borderRadius: 10,
     fontSize: 16,
+  },
+
+  viewLink: {
+    color: '#88898F',
+    fontWeight: 'medium',
+    fontSize: 18,
   },
 });

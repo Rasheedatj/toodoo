@@ -20,7 +20,7 @@ const bookings: Booking[] = [
     serviceImage: (
       <Image
         style={bookingsStyle.bookingImage}
-        source={require('../../assets/images/Vector.png')}
+        source={require('../../../assets/images/Vector.png')}
       />
     ),
     charge: 3000,
@@ -33,7 +33,7 @@ const bookings: Booking[] = [
     serviceImage: (
       <Image
         style={bookingsStyle.bookingImage}
-        source={require('../../assets/images/Vector.png')}
+        source={require('../../../assets/images/Vector.png')}
       />
     ),
     charge: 30000,
@@ -46,7 +46,7 @@ const bookings: Booking[] = [
     serviceImage: (
       <Image
         style={bookingsStyle.bookingImage}
-        source={require('../../assets/images/Vector.png')}
+        source={require('../../../assets/images/Vector.png')}
       />
     ),
     charge: 30000,
@@ -59,7 +59,7 @@ const bookings: Booking[] = [
     serviceImage: (
       <Image
         style={bookingsStyle.bookingImage}
-        source={require('../../assets/images/Vector.png')}
+        source={require('../../../assets/images/Vector.png')}
       />
     ),
     charge: 30000,
@@ -72,7 +72,7 @@ const bookings: Booking[] = [
     serviceImage: (
       <Image
         style={bookingsStyle.bookingImage}
-        source={require('../../assets/images/Vector.png')}
+        source={require('../../../assets/images/Vector.png')}
       />
     ),
     charge: 30000,
@@ -83,7 +83,7 @@ const bookings: Booking[] = [
 ];
 
 const BookingsScreen = () => {
-  const [activeMenu, setActiveMenu] = useState('');
+  const [activeMenu, setActiveMenu] = useState(' ');
 
   return (
     <View style={tabParentStyles.container}>

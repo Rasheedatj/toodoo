@@ -1,17 +1,19 @@
+import SvgComponent from '@/assets/images/user';
 import { appColors } from '@/utils/constants/colors';
 import { homeStyles } from '@/utils/styles/home';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import React from 'react';
-import { Image, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 
 const HomeProfile = () => {
   return (
     <View style={homeStyles.header}>
       <View style={homeStyles.userProfile}>
-        <Image
-          source={require('../assets/images/user.png')}
+        {/* <Image
+          source={require('../assets/images/user.tsx')}
           style={homeStyles.headerImage}
-        />
+        /> */}
+        <SvgComponent style={homeStyles.headerImage} />
         <View>
           <Text style={homeStyles.greetingText}>Hello Tobi</Text>
           <View style={homeStyles.location}>

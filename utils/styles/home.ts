@@ -51,7 +51,7 @@ export const homeStyles = StyleSheet.create({
   hero: {
     backgroundColor: appColors.primary,
     height: 200,
-    borderRadius: 10,
+    borderRadius: 14,
     padding: 20,
     marginTop: 20,
   },
@@ -63,9 +63,10 @@ export const homeStyles = StyleSheet.create({
   },
 
   heroDescription: {
-    marginTop: 14,
+    marginTop: 10,
+    marginBottom: 10,
     color: '#fff',
-    fontSize: 12,
+    fontSize: 14,
   },
   serviceCardListContainer: {
     flexDirection: 'column',
@@ -73,12 +74,13 @@ export const homeStyles = StyleSheet.create({
   },
 
   serviceCardList: {
-    marginBottom: 22,
+    marginBottom: 24,
     flexDirection: 'row',
+    justifyContent: 'center',
   },
 
   serviceCard: {
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     flex: 1,
   },
 
@@ -95,6 +97,7 @@ export const homeStyles = StyleSheet.create({
 
   serviceText: {
     color: '#646363',
+    textAlign: 'center',
   },
 
   providerContainer: {
@@ -115,18 +118,18 @@ export const homeStyles = StyleSheet.create({
   providerInfoItem: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginRight: 8,
   },
 
   providerInfoItemText: {
     marginLeft: 2,
     color: '#A3A2A9',
-    fontSize: 12,
+    fontSize: 14,
   },
 
   providerPrice: {
     color: '#A3A2A9',
-    marginVertical: 12,
+    marginBottom: 12,
+    marginTop: 4,
   },
 
   bookedServiceContainer: {

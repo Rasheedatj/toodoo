@@ -12,7 +12,7 @@ const Button = ({
 }: ButtonProps) => {
   return (
     <View
-      style={[styles.buttonContainer, style, styles[`${variant}Container`]]}
+      style={[styles[`${variant}Container`], styles.buttonContainer, style]}
     >
       <Pressable
         onPress={onPress}
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
 
   outlineContainer: {
     backgroundColor: 'transparent',
-    borderWidth: 1,
+    borderWidth: 2,
   },
 
   primaryText: {

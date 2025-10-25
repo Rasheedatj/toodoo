@@ -38,7 +38,8 @@ const TabLayout = () => {
         }}
       ></Tabs.Screen>
       <Tabs.Screen
-        name='Bookings'
+        name='bookings/index'
+        // name='Bookings'
         options={{
           title: 'Bookings',
           tabBarIcon: ({ size, color }) => (
