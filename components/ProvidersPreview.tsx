@@ -1,7 +1,7 @@
 import { commonStyles } from '@/utils/styles/common';
 import { Link } from 'expo-router';
 import React from 'react';
-import { Text, View } from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
 import { ProviderProps } from '../utils/types/UI';
 import Provider from './Provider';
 
@@ -37,13 +37,11 @@ const ProvidersPreview = () => (
       </Link>
     </View>
 
-    {/* <FlatList
-      data={nearbyProviders}
-      renderItem={(itemData) => <Provider provider={itemData.item} />}
-      keyExtractor={(item) => item.id}
-      // style={{ flexDirection: 'row' }}
-    /> */}
-    <Provider provider={nearbyProviders[0]} />
+    <ScrollView horizontal showsHorizontalScrollIndicator={false} pagingEnabled>
+      {nearbyProviders.map((provider) => (
+        <Provider key={provider.id} provider={provider} />
+      ))}
+    </ScrollView>
   </View>
 );
 

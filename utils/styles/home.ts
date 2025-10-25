@@ -105,7 +105,8 @@ export const homeStyles = StyleSheet.create({
   },
 
   providerCard: {
-    width: '80%',
+    flex: 1,
+    marginRight: 14,
   },
 
   providerInfo: {
@@ -118,10 +119,11 @@ export const homeStyles = StyleSheet.create({
   providerInfoItem: {
     flexDirection: 'row',
     alignItems: 'center',
+    marginRight: 8,
   },
 
   providerInfoItemText: {
-    marginLeft: 2,
+    marginLeft: 4,
     color: '#A3A2A9',
     fontSize: 14,
   },
