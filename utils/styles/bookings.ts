@@ -136,6 +136,11 @@ export const bookingDetStyle = StyleSheet.create({
     paddingInline: 10,
     paddingTop: 10,
   },
+
+  buttons: {
+    // flexDirection: 'row',
+    marginTop: 28,
+  },
 });
 
 export const cancelStyles = StyleSheet.create({

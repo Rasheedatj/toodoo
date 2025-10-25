@@ -1,7 +1,10 @@
+import { appColors } from '@/utils/constants/colors';
 import { walletStyles } from '@/utils/styles/wallet';
 import { BalanceProp } from '@/utils/types/UI';
+import { Feather } from '@expo/vector-icons';
 import React from 'react';
-import { Button, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import Button from './Button';
 
 const Balance = ({ onOpenModal, onSetModal }: BalanceProp) => {
   return (
@@ -16,22 +19,36 @@ const Balance = ({ onOpenModal, onSetModal }: BalanceProp) => {
         style={{
           flexDirection: 'row',
           marginTop: 10,
+          width: '70%',
         }}
       >
         <Button
-          title='Deposit'
           onPress={() => {
             onOpenModal();
             onSetModal('deposit');
           }}
-        />
+          style={{ flex: 1 }}
+          icon={<Feather name='arrow-down-left' size={18} color='white' />}
+        >
+          Deposit
+        </Button>
         <Button
-          title='Withdraw'
           onPress={() => {
             onOpenModal();
             onSetModal('withdraw');
           }}
-        />
+          style={{ flex: 1, borderColor: appColors.primary }}
+          variant='outline'
+          icon={
+            <Feather
+              name='arrow-up-right'
+              size={18}
+              color={appColors.primary}
+            />
+          }
+        >
+          Withdraw
+        </Button>
       </View>
     </View>
   );

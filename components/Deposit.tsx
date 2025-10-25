@@ -1,8 +1,9 @@
 import { walletStyles } from '@/utils/styles/wallet';
 import React from 'react';
 import { Text, TextInput, View } from 'react-native';
+import Button from './Button';
 
-const Deposit = () => {
+const Deposit = ({ setSuccess }: { setSuccess: () => void }) => {
   return (
     <View style={walletStyles.modalContent}>
       <View>
@@ -16,6 +17,10 @@ const Deposit = () => {
         <Text style={walletStyles.modalLabel}>Amount</Text>
         <TextInput style={walletStyles.modalInput} placeholder='e.g 10,000' />
       </View>
+
+      <Button onPress={() => setSuccess()} style={{ marginTop: 46 }}>
+        Proceed
+      </Button>
     </View>
   );
 };

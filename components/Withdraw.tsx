@@ -1,8 +1,9 @@
 import { walletStyles } from '@/utils/styles/wallet';
 import React from 'react';
 import { Text, TextInput, View } from 'react-native';
+import Button from './Button';
 
-const Withdraw = () => {
+const Withdraw = ({ setSuccess }: { setSuccess: () => void }) => {
   return (
     <View style={walletStyles.modalContent}>
       <View>
@@ -29,6 +30,15 @@ const Withdraw = () => {
           placeholder='e.g 2153026690'
         />
       </View>
+
+      <Button
+        onPress={() => {
+          setSuccess();
+        }}
+        style={{ marginTop: 46 }}
+      >
+        Proceed
+      </Button>
     </View>
   );
 };

@@ -3,9 +3,11 @@ import { commonStyles } from '@/utils/styles/common';
 import { homeStyles } from '@/utils/styles/home';
 import { BookingDetails } from '@/utils/types/UI';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
-import { Button, ScrollView, Text, View } from 'react-native';
+import { Alert, ScrollView, Text, View } from 'react-native';
 import BackHeader from './BackHeader';
+import Button from './Button';
 import CancelBooking from './CancelBooking';
 import ReportProvider from './ReportProvider';
 import Status from './Status';
@@ -13,6 +15,7 @@ import Status from './Status';
 const Booking = ({ booking }: { booking: BookingDetails }) => {
   const [isCancelVisible, setIsCancelVisible] = useState(false);
   const [isReportVisible, setIsReportVisible] = useState(false);
+  const router = useRouter();
   const { service, date, description, id, address, charge, status, provider } =
     booking;
   return (
@@ -102,11 +105,28 @@ const Booking = ({ booking }: { booking: BookingDetails }) => {
             </View>
           </View>
 
-          <Button
-            title='Cancel booking'
-            onPress={() => setIsCancelVisible(true)}
-          />
-          <Button title='Report' onPress={() => setIsReportVisible(true)} />
+          <View style={bookingDetStyle.buttons}>
+            <Button
+              onPress={() =>
+                Alert.alert('Completed!', 'This booking is now completed', [
+                  {
+                    text: 'Ok',
+                    onPress: () => router.push('/(tabs)/Bookings'),
+                  },
+                ])
+              }
+              style={{ flex: 1 }}
+            >
+              Mark as done
+            </Button>
+            <Button
+              onPress={() => setIsCancelVisible(true)}
+              style={{ flex: 1, borderColor: 'red' }}
+              variant='outline'
+            >
+              Cancel Booking
+            </Button>
+          </View>
         </View>
       </ScrollView>
 

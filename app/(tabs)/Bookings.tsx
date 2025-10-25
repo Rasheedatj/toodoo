@@ -83,7 +83,7 @@ const bookings: Booking[] = [
 ];
 
 const BookingsScreen = () => {
-  const [activeMenu, setActiveMenu] = useState('pending');
+  const [activeMenu, setActiveMenu] = useState('');
 
   return (
     <View style={tabParentStyles.container}>

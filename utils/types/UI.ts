@@ -70,3 +70,12 @@ export interface BookingDetails extends Booking {
   address: string;
   provider: Provider;
 }
+type ButtonVariant = 'primary' | 'outline';
+
+export interface ButtonProps {
+  children: ReactNode;
+  onPress: () => void;
+  variant?: ButtonVariant;
+  style?: any;
+  icon?: ReactNode;
+}
