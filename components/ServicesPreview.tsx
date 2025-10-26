@@ -1,14 +1,26 @@
+import AutoRepair from '@/assets/images/AutoRepair';
+import Barbing from '@/assets/images/Barbing';
+import Carpentry from '@/assets/images/Carpentry';
+import Clean from '@/assets/images/Clean';
+import Electrical from '@/assets/images/Electrical';
+import Hairstyling from '@/assets/images/Hairstyling';
+import Laundry from '@/assets/images/Laundry';
+import Painting from '@/assets/images/Painting';
+import Plumbing from '@/assets/images/plumbing';
 import { commonStyles } from '@/utils/styles/common';
 import { homeStyles } from '@/utils/styles/home';
+import { Link } from 'expo-router';
 import React from 'react';
-import { Button, Image, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 
 const ServicesPreview = () => {
   return (
     <View style={commonStyles.container}>
       <View style={commonStyles.previewHeader}>
         <Text style={commonStyles.previewHeaderText}>Services</Text>
-        <Button title='View All' color='#88898F' />
+        <Link href='/' style={commonStyles.viewLink}>
+          View All
+        </Link>
       </View>
 
       <View style={homeStyles.serviceCardListContainer}>
@@ -16,33 +28,33 @@ const ServicesPreview = () => {
           {/* start */}
           <View style={homeStyles.serviceCard}>
             <View style={homeStyles.serviceImage}>
-              <Image source={require('../assets/images/Vector.png')} />
+              <Plumbing />
             </View>
             <Text style={homeStyles.serviceText}>Plumbing</Text>
           </View>
           <View style={homeStyles.serviceCard}>
             <View style={homeStyles.serviceImage}>
-              <Image source={require('../assets/images/Vector.png')} />
+              <Carpentry />
             </View>
-            <Text style={homeStyles.serviceText}>Plumbing</Text>
+            <Text style={homeStyles.serviceText}>Carpentry</Text>
           </View>
           <View style={homeStyles.serviceCard}>
             <View style={homeStyles.serviceImage}>
-              <Image source={require('../assets/images/Vector.png')} />
+              <Painting />
             </View>
-            <Text style={homeStyles.serviceText}>Plumbing</Text>
+            <Text style={homeStyles.serviceText}>Painting</Text>
           </View>
           <View style={homeStyles.serviceCard}>
             <View style={homeStyles.serviceImage}>
-              <Image source={require('../assets/images/Vector.png')} />
+              <Barbing />
             </View>
-            <Text style={homeStyles.serviceText}>Plumbing</Text>
+            <Text style={homeStyles.serviceText}>Barbing</Text>
           </View>
           <View style={homeStyles.serviceCard}>
             <View style={homeStyles.serviceImage}>
-              <Image source={require('../assets/images/Vector.png')} />
+              <Electrical />
             </View>
-            <Text style={homeStyles.serviceText}>Plumbing</Text>
+            <Text style={homeStyles.serviceText}>Electrical</Text>
           </View>
         </View>
 
@@ -50,27 +62,27 @@ const ServicesPreview = () => {
           {/* start */}
           <View style={homeStyles.serviceCard}>
             <View style={homeStyles.serviceImage}>
-              <Image source={require('../assets/images/Vector.png')} />
+              <Hairstyling />
             </View>
-            <Text style={homeStyles.serviceText}>Plumbing</Text>
+            <Text style={homeStyles.serviceText}>Hairstyling</Text>
           </View>
           <View style={homeStyles.serviceCard}>
             <View style={homeStyles.serviceImage}>
-              <Image source={require('../assets/images/Vector.png')} />
+              <Clean />
             </View>
-            <Text style={homeStyles.serviceText}>Plumbing</Text>
+            <Text style={homeStyles.serviceText}>Cleaning</Text>
           </View>
           <View style={homeStyles.serviceCard}>
             <View style={homeStyles.serviceImage}>
-              <Image source={require('../assets/images/Vector.png')} />
+              <AutoRepair />
             </View>
-            <Text style={homeStyles.serviceText}>Plumbing</Text>
+            <Text style={homeStyles.serviceText}>Mechanics</Text>
           </View>
           <View style={homeStyles.serviceCard}>
             <View style={homeStyles.serviceImage}>
-              <Image source={require('../assets/images/Vector.png')} />
+              <Laundry />
             </View>
-            <Text style={homeStyles.serviceText}>Plumbing</Text>
+            <Text style={homeStyles.serviceText}>Laundry</Text>
           </View>
           <View style={homeStyles.serviceCard}></View>
         </View>

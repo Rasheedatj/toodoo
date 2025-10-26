@@ -51,9 +51,10 @@ export const homeStyles = StyleSheet.create({
   hero: {
     backgroundColor: appColors.primary,
     height: 200,
-    borderRadius: 10,
+    borderRadius: 14,
     padding: 20,
     marginTop: 20,
+    alignItems: 'flex-start',
   },
 
   heroHeader: {
@@ -63,9 +64,10 @@ export const homeStyles = StyleSheet.create({
   },
 
   heroDescription: {
-    marginTop: 14,
+    marginTop: 10,
+    marginBottom: 10,
     color: '#fff',
-    fontSize: 12,
+    fontSize: 14,
   },
   serviceCardListContainer: {
     flexDirection: 'column',
@@ -73,12 +75,13 @@ export const homeStyles = StyleSheet.create({
   },
 
   serviceCardList: {
-    marginBottom: 22,
+    marginBottom: 24,
     flexDirection: 'row',
+    justifyContent: 'center',
   },
 
   serviceCard: {
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     flex: 1,
   },
 
@@ -95,6 +98,7 @@ export const homeStyles = StyleSheet.create({
 
   serviceText: {
     color: '#646363',
+    textAlign: 'center',
   },
 
   providerContainer: {
@@ -102,28 +106,33 @@ export const homeStyles = StyleSheet.create({
   },
 
   providerCard: {
-    width: '80%',
+    flex: 1,
+    marginRight: 14,
   },
 
   providerInfo: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingHorizontal: 4,
+    paddingHorizontal: 2,
   },
 
   providerInfoItem: {
     flexDirection: 'row',
     alignItems: 'center',
+    marginRight: 8,
   },
 
   providerInfoItemText: {
-    marginLeft: 6,
+    marginLeft: 4,
     color: '#A3A2A9',
+    fontSize: 14,
   },
+
   providerPrice: {
     color: '#A3A2A9',
-    marginVertical: 12,
+    marginBottom: 12,
+    marginTop: 4,
   },
 
   bookedServiceContainer: {
@@ -143,15 +152,16 @@ export const homeStyles = StyleSheet.create({
   bookedHeader: {
     fontWeight: 'semibold',
     fontSize: 16,
+    textTransform: 'capitalize',
   },
   bookedRating: {
     marginVertical: 9,
     color: appColors['text-gray'],
-    fontSize: 10,
+    fontSize: 12,
   },
   bookedPrice: {
     color: appColors['text-gray'],
-    fontSize: 10,
+    fontSize: 12,
   },
 });
 
@@ -161,6 +171,7 @@ export const searchModalStyles = StyleSheet.create({
     padding: 16,
     paddingTop: 65,
   },
+
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -197,5 +208,35 @@ export const searchModalStyles = StyleSheet.create({
     fontSize: 16,
     textTransform: 'capitalize',
     flex: 1,
+  },
+});
+
+export const serviceListStyles = StyleSheet.create({
+  container: {
+    marginTop: 24,
+  },
+  serviceList: {
+    marginTop: 30,
+  },
+  serviceItem: {
+    flexDirection: 'row',
+    padding: 20,
+    borderWidth: 1,
+    borderColor: '#E2E8F9',
+    borderRadius: 10,
+    marginBottom: 20,
+  },
+  serviceTitle: {
+    width: '50%',
+  },
+  availaible: {
+    alignItems: 'center',
+    flexDirection: 'row',
+  },
+  availableText: {
+    flexDirection: 'row',
+    marginLeft: 6,
+    color: '#A3A2A9',
+    fontSize: 13,
   },
 });

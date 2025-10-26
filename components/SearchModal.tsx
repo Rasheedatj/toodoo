@@ -2,9 +2,10 @@ import { appColors } from '@/utils/constants/colors';
 import { commonStyles } from '@/utils/styles/common';
 import { homeStyles, searchModalStyles } from '@/utils/styles/home';
 import { ModalProps, RecentSearch } from '@/utils/types/UI';
-import { Feather, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
 import React, { useState } from 'react';
 import { Modal, Pressable, Text, TextInput, View } from 'react-native';
+import BackHeader from './BackHeader';
 
 const searches = [
   { title: 'carpentry 1', id: '244' },
@@ -23,30 +24,10 @@ const SearchModal = ({ isOpen, onClose }: ModalProps) => {
       currentSearches.filter((item) => item.id !== id)
     );
 
-  //   useEffect(() => {
-  //     setRecentSearches(
-  //       recentSearches.filter((item) => item.title.includes(searchInput))
-  //     );
-  //   }, [searchInput]);
-
   return (
     <Modal visible={isOpen} animationType='slide'>
       <View style={searchModalStyles.container}>
-        <View style={searchModalStyles.header}>
-          <Pressable onPress={onClose} style={commonStyles.back}>
-            <Ionicons
-              name='chevron-back'
-              size={24}
-              color={appColors['text-gray']}
-            />
-            <Text style={searchModalStyles.backText}>Back</Text>
-          </Pressable>
-          <MaterialCommunityIcons
-            name='bell-outline'
-            size={32}
-            color={'#141B34'}
-          />
-        </View>
+        <BackHeader onClick={onClose} />
 
         <View style={homeStyles.searchBar}>
           <Feather name='search' size={24} color='#ACB5BB' />
@@ -59,7 +40,7 @@ const SearchModal = ({ isOpen, onClose }: ModalProps) => {
         </View>
 
         <View style={searchModalStyles.recent}>
-          <Text style={commonStyles.previewHeaderText}>Recent Searches</Text>
+          <Text style={commonStyles.header}>Recent Searches</Text>
 
           {recentSearches.map((search) => (
             <Pressable style={searchModalStyles.searchItem} key={search.id}>
