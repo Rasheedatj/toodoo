@@ -54,6 +54,7 @@ export const homeStyles = StyleSheet.create({
     borderRadius: 14,
     padding: 20,
     marginTop: 20,
+    alignItems: 'flex-start',
   },
 
   heroHeader: {

@@ -1,3 +1,5 @@
+import Clean from '@/assets/images/Clean';
+import Laundry from '@/assets/images/Laundry';
 import Plumbing from '@/assets/images/plumbing';
 import BookingItem from '@/components/BookingItem';
 import ScreenHeader from '@/components/ScreenHeader';
@@ -26,7 +28,7 @@ const bookings: Booking[] = [
   },
   {
     id: 'ab',
-    serviceImage: <Plumbing />,
+    serviceImage: <Clean />,
     charge: 30000,
     location: 'Lagos, Nigeria',
     service: 'cleaning',
@@ -42,10 +44,10 @@ const bookings: Booking[] = [
   },
   {
     id: 'ab2c',
-    serviceImage: <Plumbing />,
+    serviceImage: <Laundry />,
     charge: 30000,
     location: 'Lagos, Nigeria',
-    service: 'plumbing',
+    service: 'laundry',
     status: 'completed',
   },
   {
