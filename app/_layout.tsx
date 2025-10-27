@@ -5,13 +5,15 @@ export default function RootLayout() {
     <Stack
       screenOptions={{
         contentStyle: {
-          backgroundColor: 'white',
+          backgroundColor: 'red',
         },
       }}
     >
       <Stack.Screen
         name='(tabs)'
-        options={{ headerShown: false }}
+        options={{
+          headerShown: false,
+        }}
       ></Stack.Screen>
     </Stack>
   );

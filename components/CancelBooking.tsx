@@ -49,7 +49,7 @@ const CancelBooking = ({ isOpen, onClose }: ModalProps) => {
                         text: 'ok',
                         onPress: () => {
                           onClose();
-                          router.push('/(tabs)/Bookings');
+                          router.push('/(tabs)/bookings');
                         },
                       },
                     ]

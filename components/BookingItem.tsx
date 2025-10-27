@@ -1,16 +1,27 @@
+import { appColors } from '@/utils/constants/colors';
 import { bookingsStyle } from '@/utils/styles/bookings';
+import { chatHomeStyle } from '@/utils/styles/chat';
 import { homeStyles } from '@/utils/styles/home';
 import { Booking } from '@/utils/types/UI';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Pressable, Text, View } from 'react-native';
 import Status from './Status';
 
 const BookingItem = ({ booking }: { booking: Booking }) => {
-  const { serviceImage, status, charge, location, service } = booking;
+  const router = useRouter();
+  const { serviceImage, status, charge, location, service, id } = booking;
+
   return (
-    <View style={[bookingsStyle.bookingItem]}>
-      {serviceImage}
+    <Pressable
+      style={({ pressed }) => [
+        bookingsStyle.bookingItem,
+        pressed && chatHomeStyle.pressed,
+      ]}
+      onPress={() => router.push(`/(tabs)/bookings/${id}`)}
+    >
+      <View style={bookingsStyle.serviceImage}>{serviceImage}</View>
       <View style={bookingsStyle.bookingDetails}>
         <Text style={bookingsStyle.bookingService}>{service} service</Text>
         <Text style={bookingsStyle.bookingChargeBox}>
@@ -30,7 +41,14 @@ const BookingItem = ({ booking }: { booking: Booking }) => {
           </View>
         </View>
       </View>
-    </View>
+
+      <Feather
+        name='arrow-up-right'
+        size={18}
+        color={appColors['text-gray']}
+        style={bookingsStyle.arrow}
+      />
+    </Pressable>
   );
 };
 

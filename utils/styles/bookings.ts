@@ -31,10 +31,14 @@ export const bookingsStyle = StyleSheet.create({
     borderRadius: 10,
     marginBottom: 20,
   },
-  bookingImage: {
-    width: 80,
-    height: 80,
-    objectFit: 'contain',
+  serviceImage: {
+    width: '12%',
+    height: 40,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  arrow: {
+    width: '5%',
   },
   bookingDetails: {
     flex: 1,

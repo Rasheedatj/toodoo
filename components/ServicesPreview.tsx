@@ -18,7 +18,7 @@ const ServicesPreview = () => {
     <View style={commonStyles.container}>
       <View style={commonStyles.previewHeader}>
         <Text style={commonStyles.previewHeaderText}>Services</Text>
-        <Link href='/' style={commonStyles.viewLink}>
+        <Link href='/(tabs)/home/ServicesList' style={commonStyles.viewLink}>
           View All
         </Link>
       </View>
