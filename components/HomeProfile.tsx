@@ -1,19 +1,22 @@
-import SvgComponent from '@/assets/images/user';
-import { appColors } from '@/utils/constants/colors';
+import { appColors, deviceWidth } from '@/utils/constants/colors';
 import { homeStyles } from '@/utils/styles/home';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Image, Text, View } from 'react-native';
 
 const HomeProfile = () => {
   return (
     <View style={homeStyles.header}>
       <View style={homeStyles.userProfile}>
-        {/* <Image
-          source={require('../assets/images/user.tsx')}
-          style={homeStyles.headerImage}
-        /> */}
-        <SvgComponent style={homeStyles.headerImage} />
+        <View style={homeStyles.headerImage}>
+          <Image
+            source={{
+              uri: 'https://images.unsplash.com/photo-1502685104226-ee32379fefbe',
+            }}
+            style={{ flex: 1 }}
+          />
+        </View>
+
         <View>
           <Text style={homeStyles.greetingText}>Hello Tobi</Text>
           <View style={homeStyles.location}>
@@ -31,7 +34,7 @@ const HomeProfile = () => {
       <View>
         <MaterialCommunityIcons
           name='bell-outline'
-          size={32}
+          size={deviceWidth < 400 ? 24 : 32}
           color={'#141B34'}
         />
       </View>

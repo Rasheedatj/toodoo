@@ -1,12 +1,10 @@
-import Clean from '@/assets/images/Clean';
-import Laundry from '@/assets/images/Laundry';
-import Plumbing from '@/assets/images/plumbing';
 import BookingItem from '@/components/BookingItem';
 import ScreenHeader from '@/components/ScreenHeader';
 import TabMenu from '@/components/TabMenu';
+import { bookings } from '@/utils/dummyData';
 import { tabParentStyles } from '@/utils/styles';
 import { bookingsStyle } from '@/utils/styles/bookings';
-import { Booking, TabItem } from '@/utils/types/UI';
+import { TabItem } from '@/utils/types/UI';
 import React, { useState } from 'react';
 import { FlatList, View } from 'react-native';
 
@@ -15,49 +13,6 @@ const bookingsMenu: TabItem[] = [
   { id: 'pending', title: 'In-Progress' },
   { id: 'completed', title: 'Completed' },
   { id: 'cancelled', title: 'Cancelled' },
-];
-
-const bookings: Booking[] = [
-  {
-    id: 'a',
-    serviceImage: <Plumbing />,
-    charge: 3000,
-    location: 'Lagos, Nigeria',
-    service: 'laundry',
-    status: 'pending',
-  },
-  {
-    id: 'ab',
-    serviceImage: <Clean />,
-    charge: 30000,
-    location: 'Lagos, Nigeria',
-    service: 'cleaning',
-    status: 'completed',
-  },
-  {
-    id: 'abc',
-    serviceImage: <Plumbing />,
-    charge: 30000,
-    location: 'Lagos, Nigeria',
-    service: 'plumbing',
-    status: 'cancelled',
-  },
-  {
-    id: 'ab2c',
-    serviceImage: <Laundry />,
-    charge: 30000,
-    location: 'Lagos, Nigeria',
-    service: 'laundry',
-    status: 'completed',
-  },
-  {
-    id: 'ab2d',
-    serviceImage: <Plumbing />,
-    charge: 30000,
-    location: 'Lagos, Nigeria',
-    service: 'plumbing',
-    status: 'pending',
-  },
 ];
 
 const BookingsScreen = () => {

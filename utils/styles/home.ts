@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { appColors } from '../constants/colors';
+import { appColors, deviceWidth } from '../constants/colors';
 
 export const homeStyles = StyleSheet.create({
   header: {
@@ -8,12 +8,17 @@ export const homeStyles = StyleSheet.create({
     alignItems: 'center',
   },
   headerImage: {
-    width: 70,
-    height: 70,
+    width: deviceWidth < 400 ? 50 : 70,
+    height: deviceWidth < 400 ? 50 : 70,
     marginRight: 16,
+    borderWidth: 1,
+    borderColor: appColors.primary,
+    borderRadius: deviceWidth < 400 ? 25 : 35,
+    backgroundColor: 'red',
+    overflow: 'hidden',
   },
   greetingText: {
-    fontSize: 18,
+    fontSize: deviceWidth < 400 ? 14 : 18,
     fontWeight: 'medium',
   },
   userProfile: {
@@ -23,7 +28,7 @@ export const homeStyles = StyleSheet.create({
   location: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: 8,
+    marginTop: deviceWidth < 400 ? 4 : 8,
   },
   locationIcon: {
     marginRight: 6,
@@ -38,9 +43,9 @@ export const homeStyles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
     borderColor: '#EDF1F3',
-    paddingVertical: 18,
-    paddingHorizontal: 14,
-    marginTop: 28,
+    paddingVertical: deviceWidth < 400 ? 12 : 18,
+    paddingHorizontal: deviceWidth < 400 ? 10 : 14,
+    marginTop: deviceWidth < 400 ? 22 : 28,
   },
 
   searchText: {
@@ -50,7 +55,7 @@ export const homeStyles = StyleSheet.create({
 
   hero: {
     backgroundColor: appColors.primary,
-    height: 200,
+    height: deviceWidth < 400 ? 180 : 200,
     borderRadius: 14,
     padding: 20,
     marginTop: 20,
@@ -60,14 +65,14 @@ export const homeStyles = StyleSheet.create({
   heroHeader: {
     color: '#fff',
     fontWeight: 'bold',
-    fontSize: 18,
+    fontSize: deviceWidth < 400 ? 16 : 18,
   },
 
   heroDescription: {
     marginTop: 10,
     marginBottom: 10,
     color: '#fff',
-    fontSize: 14,
+    fontSize: deviceWidth < 400 ? 12 : 14,
   },
   serviceCardListContainer: {
     flexDirection: 'column',
@@ -82,6 +87,7 @@ export const homeStyles = StyleSheet.create({
 
   serviceCard: {
     justifyContent: 'center',
+    alignItems: 'center',
     flex: 1,
   },
 
@@ -91,14 +97,15 @@ export const homeStyles = StyleSheet.create({
     marginBottom: 10,
     borderWidth: 1,
     borderColor: '#EDF1F3',
-    width: 65,
-    height: 65,
+    width: deviceWidth < 400 ? 55 : 65,
+    height: deviceWidth < 400 ? 55 : 65,
     borderRadius: 14,
   },
 
   serviceText: {
     color: '#646363',
     textAlign: 'center',
+    fontSize: deviceWidth < 400 ? 13 : 15,
   },
 
   providerContainer: {
@@ -126,13 +133,14 @@ export const homeStyles = StyleSheet.create({
   providerInfoItemText: {
     marginLeft: 4,
     color: '#A3A2A9',
-    fontSize: 14,
+    fontSize: deviceWidth < 400 ? 12 : 14,
   },
 
   providerPrice: {
     color: '#A3A2A9',
-    marginBottom: 12,
-    marginTop: 4,
+    marginBottom: deviceWidth < 400 ? 8 : 12,
+    marginTop: deviceWidth < 400 ? 3 : 4,
+    fontSize: deviceWidth < 400 ? 13 : 15,
   },
 
   bookedServiceContainer: {
@@ -151,11 +159,11 @@ export const homeStyles = StyleSheet.create({
 
   bookedHeader: {
     fontWeight: 'semibold',
-    fontSize: 16,
+    fontSize: deviceWidth < 400 ? 13 : 16,
     textTransform: 'capitalize',
   },
   bookedRating: {
-    marginVertical: 9,
+    marginVertical: deviceWidth < 400 ? 5 : 9,
     color: appColors['text-gray'],
     fontSize: 12,
   },

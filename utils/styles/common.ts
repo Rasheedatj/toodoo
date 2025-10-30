@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { appColors } from '../constants/colors';
+import { appColors, deviceWidth } from '../constants/colors';
 
 export const commonStyles = StyleSheet.create({
   container: {
@@ -13,7 +13,6 @@ export const commonStyles = StyleSheet.create({
     padding: 16,
     paddingTop: 35,
     paddingBottom: 100,
-    // height: 400,
     backgroundColor: 'white',
     marginTop: 'auto',
     borderTopLeftRadius: 20,
@@ -22,7 +21,7 @@ export const commonStyles = StyleSheet.create({
 
   header: {
     fontWeight: 'medium',
-    fontSize: 20,
+    fontSize: deviceWidth < 400 ? 16 : 20,
     color: '#1A1C1E',
     marginBottom: 10,
   },
@@ -36,7 +35,7 @@ export const commonStyles = StyleSheet.create({
 
   previewHeaderText: {
     fontWeight: 'bold',
-    fontSize: 24,
+    fontSize: deviceWidth < 400 ? 20 : 24,
     color: '#3D3F33',
   },
 
@@ -91,6 +90,6 @@ export const commonStyles = StyleSheet.create({
   viewLink: {
     color: '#88898F',
     fontWeight: 'medium',
-    fontSize: 18,
+    fontSize: deviceWidth < 400 ? 14 : 18,
   },
 });

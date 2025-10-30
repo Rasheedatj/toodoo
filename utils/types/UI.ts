@@ -4,6 +4,7 @@ export interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   type?: string;
+  bookingId?: string;
 }
 
 export interface RecentSearch {
@@ -51,30 +52,27 @@ export interface ScreenHeaderProps {
 
 export interface Booking {
   id: string;
-  serviceImage: ReactNode;
+  serviceImage: string;
   charge: number;
   service: string;
-  location?: string;
   status: string;
-}
-
-export interface ProviderProps {
-  id: string;
-  name: string;
-  userAvatar: ReactNode;
-  location: string;
-  rating: number;
-  rateAmount: number;
-  price: number;
-  service?: string;
-}
-
-export interface BookingDetails extends Booking {
   description: string;
   date: string;
   address: string;
   provider: ProviderProps;
 }
+
+export interface ProviderProps {
+  id: string;
+  name: string;
+  userAvatar: string;
+  location: string;
+  rating: number;
+  rateAmount: number;
+  price: number;
+  service: string;
+}
+
 type ButtonVariant = 'primary' | 'outline';
 
 export interface ButtonProps {

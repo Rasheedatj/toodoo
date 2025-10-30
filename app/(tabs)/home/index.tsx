@@ -7,7 +7,7 @@ import ServicesPreview from '@/components/ServicesPreview';
 import { tabParentStyles } from '@/utils/styles';
 import { ScrollView, View } from 'react-native';
 
-export default function Index() {
+export default function Home() {
   return (
     <View style={tabParentStyles.container}>
       <HomeProfile />

@@ -18,7 +18,7 @@ export const walletStyles = StyleSheet.create({
   },
   balanceHeader: {
     color: appColors['text-gray'],
-    fontSize: 16,
+    fontSize: 18,
   },
   balanceAmount: {
     fontWeight: 'semibold',
@@ -28,10 +28,11 @@ export const walletStyles = StyleSheet.create({
   },
   message: {
     color: appColors['text-gray'],
+    // fontSize: 16,
   },
   activity: {
     marginTop: 50,
-    flex: 10,
+    flex: 8,
   },
   empty: {
     flex: 1,

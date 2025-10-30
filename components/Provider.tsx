@@ -12,12 +12,13 @@ const Provider = ({ provider }: { provider: ProviderProps }) => {
   return (
     <View style={[commonStyles.card, homeStyles.providerCard]}>
       <Image
-        source={require('../assets/images/booked_service.png')}
+        source={{ uri: userAvatar }}
         style={{
           width: '100%',
           height: 100,
           objectFit: 'cover',
           borderRadius: 4,
+          flex: 1,
         }}
       />
       <View style={homeStyles.bookedServiceDescription}>

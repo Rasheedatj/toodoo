@@ -70,7 +70,7 @@ const TabLayout = () => {
           }}
         ></Tabs.Screen>
         <Tabs.Screen
-          name='Profile'
+          name='profile'
           options={{
             title: 'Profile',
             tabBarIcon: ({ size, color }) => (

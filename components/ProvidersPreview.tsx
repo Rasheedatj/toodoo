@@ -9,7 +9,7 @@ const nearbyProviders: ProviderProps[] = [
   {
     id: '123',
     name: 'Oghechi Kanu',
-    userAvatar: '../assets/images/booked_service.png',
+    userAvatar: 'https://images.unsplash.com/photo-1502685104226-ee32379fefbe',
     location: 'Lagos, Nigeria',
     price: 30000,
     service: 'laundry',
@@ -19,7 +19,7 @@ const nearbyProviders: ProviderProps[] = [
   {
     id: '124',
     name: 'Oghechi Kanu',
-    userAvatar: '../assets/images/booked_service.png',
+    userAvatar: 'https://images.unsplash.com/photo-1502685104226-ee32379fefbe',
     location: 'Lagos, Nigeria',
     price: 30000,
     service: 'laundry',
@@ -32,7 +32,7 @@ const ProvidersPreview = () => (
   <View style={commonStyles.container}>
     <View style={commonStyles.previewHeader}>
       <Text style={commonStyles.previewHeaderText}>Nearby Providers</Text>
-      <Link href='/' style={commonStyles.viewLink}>
+      <Link href='/home' style={commonStyles.viewLink}>
         View All
       </Link>
     </View>

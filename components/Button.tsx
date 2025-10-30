@@ -1,4 +1,4 @@
-import { appColors } from '@/utils/constants/colors';
+import { appColors, deviceWidth } from '@/utils/constants/colors';
 import { ButtonProps } from '@/utils/types/UI';
 import React from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
@@ -36,14 +36,14 @@ export default Button;
 const styles = StyleSheet.create({
   buttonContainer: {
     marginHorizontal: 4,
-    marginVertical: 10,
+    marginVertical: deviceWidth < 400 ? 8 : 10,
     overflow: 'hidden',
     borderRadius: 8,
   },
 
   buttonInnerContainer: {
-    paddingHorizontal: 14,
-    paddingVertical: 12,
+    paddingHorizontal: deviceWidth < 400 ? 12 : 14,
+    paddingVertical: deviceWidth < 400 ? 10 : 12,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
   },
 
   buttonText: {
-    fontSize: 16,
+    fontSize: deviceWidth < 400 ? 14 : 16,
     fontWeight: 'medium',
     textAlign: 'center',
   },

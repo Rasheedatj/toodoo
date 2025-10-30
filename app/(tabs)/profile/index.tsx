@@ -3,14 +3,16 @@ import ProfileOptions from '@/components/ProfileOptions';
 import ScreenHeader from '@/components/ScreenHeader';
 import { tabParentStyles } from '@/utils/styles';
 import React from 'react';
-import { View } from 'react-native';
+import { ScrollView, View } from 'react-native';
 
 const ProfileScreen = () => {
   return (
     <View style={tabParentStyles.container}>
       <ScreenHeader title='Profile' />
-      <ProfileHero />
-      <ProfileOptions />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <ProfileHero />
+        <ProfileOptions />
+      </ScrollView>
     </View>
   );
 };

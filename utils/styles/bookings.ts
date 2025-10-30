@@ -19,9 +19,11 @@ export const bookingsStyle = StyleSheet.create({
     color: '#3D3F33',
     fontWeight: 'medium',
   },
+
   bookingList: {
     marginTop: 20,
   },
+
   bookingItem: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -31,12 +33,24 @@ export const bookingsStyle = StyleSheet.create({
     borderRadius: 10,
     marginBottom: 20,
   },
+
   serviceImage: {
     width: '12%',
     height: 40,
     justifyContent: 'center',
     alignItems: 'center',
   },
+
+  providerCharge: {
+    flexDirection: 'row',
+    marginVertical: 14,
+  },
+
+  provChar: {
+    flex: 1,
+    margin: 10,
+  },
+
   arrow: {
     width: '5%',
   },
@@ -50,15 +64,29 @@ export const bookingsStyle = StyleSheet.create({
     color: '#333333',
     textTransform: 'capitalize',
   },
+
+  serviceDateContainer: {
+    flexDirection: 'row',
+    marginVertical: 14,
+  },
+
+  serviceDate: {
+    flex: 1,
+    textTransform: 'capitalize',
+    color: appColors['text-gray'],
+    fontWeight: 'medium',
+  },
+
   bookingChargeBox: {
     color: appColors['text-gray'],
     marginVertical: 10,
   },
   bookingCharge: {
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: 'bold',
     color: appColors['text-gray'],
-    paddingLeft: 10,
+    textTransform: 'capitalize',
+    marginVertical: 14,
   },
   itemFooter: {
     flexDirection: 'row',
