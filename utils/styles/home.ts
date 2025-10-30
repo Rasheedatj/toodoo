@@ -7,16 +7,7 @@ export const homeStyles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
   },
-  headerImage: {
-    width: deviceWidth < 400 ? 50 : 70,
-    height: deviceWidth < 400 ? 50 : 70,
-    marginRight: 16,
-    borderWidth: 1,
-    borderColor: appColors.primary,
-    borderRadius: deviceWidth < 400 ? 25 : 35,
-    backgroundColor: 'red',
-    overflow: 'hidden',
-  },
+
   greetingText: {
     fontSize: deviceWidth < 400 ? 14 : 18,
     fontWeight: 'medium',

@@ -5,6 +5,16 @@ export const commonStyles = StyleSheet.create({
   container: {
     marginBlock: 16,
   },
+  avatar: {
+    width: deviceWidth < 400 ? 50 : 70,
+    height: deviceWidth < 400 ? 50 : 70,
+    marginRight: 16,
+    borderWidth: 1,
+    borderColor: appColors.primary,
+    borderRadius: deviceWidth < 400 ? 25 : 35,
+    backgroundColor: 'red',
+    overflow: 'hidden',
+  },
   fullModal: {
     padding: 16,
     paddingTop: 65,
@@ -35,7 +45,7 @@ export const commonStyles = StyleSheet.create({
 
   previewHeaderText: {
     fontWeight: 'bold',
-    fontSize: deviceWidth < 400 ? 20 : 24,
+    fontSize: deviceWidth < 400 ? 19 : 24,
     color: '#3D3F33',
   },
 

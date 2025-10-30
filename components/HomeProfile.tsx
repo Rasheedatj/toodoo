@@ -1,4 +1,5 @@
 import { appColors, deviceWidth } from '@/utils/constants/colors';
+import { commonStyles } from '@/utils/styles/common';
 import { homeStyles } from '@/utils/styles/home';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import React from 'react';
@@ -8,7 +9,7 @@ const HomeProfile = () => {
   return (
     <View style={homeStyles.header}>
       <View style={homeStyles.userProfile}>
-        <View style={homeStyles.headerImage}>
+        <View style={commonStyles.avatar}>
           <Image
             source={{
               uri: 'https://images.unsplash.com/photo-1502685104226-ee32379fefbe',

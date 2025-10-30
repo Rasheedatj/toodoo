@@ -42,8 +42,8 @@ const styles = StyleSheet.create({
   },
 
   buttonInnerContainer: {
-    paddingHorizontal: deviceWidth < 400 ? 12 : 14,
-    paddingVertical: deviceWidth < 400 ? 10 : 12,
+    paddingHorizontal: deviceWidth < 400 ? 10 : 14,
+    paddingVertical: deviceWidth < 400 ? 8 : 12,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
   },
 
   buttonText: {
-    fontSize: deviceWidth < 400 ? 14 : 16,
+    fontSize: deviceWidth < 400 ? 13 : 16,
     fontWeight: 'medium',
     textAlign: 'center',
   },

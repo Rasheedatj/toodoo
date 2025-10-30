@@ -1,3 +1,4 @@
+import { deviceWidth } from '@/utils/constants/colors';
 import { commonStyles } from '@/utils/styles/common';
 import { walletStyles } from '@/utils/styles/wallet';
 import { ScreenHeaderProps } from '@/utils/types/UI';
@@ -12,7 +13,7 @@ const ScreenHeader = ({ title, hasBell = true }: ScreenHeaderProps) => {
       {hasBell && (
         <MaterialCommunityIcons
           name='bell-outline'
-          size={32}
+          size={deviceWidth < 400 ? 24 : 32}
           color={'#141B34'}
         />
       )}

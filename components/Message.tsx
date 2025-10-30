@@ -1,8 +1,8 @@
-import User from '@/assets/images/user';
 import { chatHomeStyle } from '@/utils/styles/chat';
+import { commonStyles } from '@/utils/styles/common';
 import { MessageProp } from '@/utils/types/UI';
 import React from 'react';
-import { Pressable, Text, View } from 'react-native';
+import { Image, Pressable, Text, View } from 'react-native';
 
 const Message = ({ message }: { message: MessageProp }) => {
   const { name, title, lastSent } = message;
@@ -13,7 +13,14 @@ const Message = ({ message }: { message: MessageProp }) => {
         pressed && chatHomeStyle.pressed,
       ]}
     >
-      <User />
+      <View style={commonStyles.avatar}>
+        <Image
+          source={{
+            uri: 'https://images.unsplash.com/photo-1502685104226-ee32379fefbe',
+          }}
+          style={{ flex: 1 }}
+        />
+      </View>
 
       <View style={chatHomeStyle.description}>
         <Text style={chatHomeStyle.name}>{name}</Text>

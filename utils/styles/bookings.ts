@@ -1,10 +1,10 @@
 import { StyleSheet } from 'react-native';
-import { appColors } from '../constants/colors';
+import { appColors, deviceWidth } from '../constants/colors';
 
 export const bookingsStyle = StyleSheet.create({
   menu: {
     flexDirection: 'row',
-    marginTop: 60,
+    marginTop: deviceWidth < 400 ? 20 : 60,
   },
   menuItem: {
     paddingHorizontal: 10,
@@ -60,14 +60,14 @@ export const bookingsStyle = StyleSheet.create({
   },
   bookingService: {
     fontWeight: 'semibold',
-    fontSize: 18,
+    fontSize: deviceWidth < 400 ? 15 : 18,
     color: '#333333',
     textTransform: 'capitalize',
   },
 
   serviceDateContainer: {
     flexDirection: 'row',
-    marginVertical: 14,
+    marginVertical: deviceWidth < 400 ? 10 : 14,
   },
 
   serviceDate: {
@@ -75,12 +75,14 @@ export const bookingsStyle = StyleSheet.create({
     textTransform: 'capitalize',
     color: appColors['text-gray'],
     fontWeight: 'medium',
+    fontSize: deviceWidth < 400 ? 13 : 14,
   },
 
   bookingChargeBox: {
     color: appColors['text-gray'],
     marginVertical: 10,
   },
+
   bookingCharge: {
     fontSize: 14,
     fontWeight: 'bold',
@@ -95,11 +97,12 @@ export const bookingsStyle = StyleSheet.create({
   status: {
     textTransform: 'capitalize',
     marginRight: 8,
-    paddingVertical: 4,
-    paddingHorizontal: 10,
+    paddingVertical: deviceWidth < 400 ? 3 : 4,
+    paddingHorizontal: deviceWidth < 400 ? 8 : 10,
     fontWeight: 'semibold',
     borderRadius: 20,
     textAlign: 'center',
+    fontSize: deviceWidth < 400 ? 13 : 15,
   },
 });
 

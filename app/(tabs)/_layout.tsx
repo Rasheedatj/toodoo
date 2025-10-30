@@ -25,7 +25,6 @@ const TabLayout = () => {
           sceneStyle: {
             backgroundColor: 'white',
             padding: 16,
-            paddingTop: 30,
           },
         }}
       >

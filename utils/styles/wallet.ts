@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { appColors } from '../constants/colors';
+import { appColors, deviceWidth } from '../constants/colors';
 
 export const walletStyles = StyleSheet.create({
   container: {
@@ -14,25 +14,25 @@ export const walletStyles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   balance: {
-    marginTop: 30,
+    marginTop: deviceWidth < 400 ? 20 : 30,
   },
   balanceHeader: {
     color: appColors['text-gray'],
-    fontSize: 18,
+    fontSize: deviceWidth < 400 ? 14 : 18,
   },
   balanceAmount: {
     fontWeight: 'semibold',
     fontSize: 20,
     color: '#1C1B1E',
-    marginVertical: 14,
+    marginVertical: deviceWidth < 400 ? 8 : 14,
   },
   message: {
     color: appColors['text-gray'],
     // fontSize: 16,
   },
   activity: {
-    marginTop: 50,
-    flex: 8,
+    marginTop: deviceWidth < 400 ? 40 : 50,
+    flex: deviceWidth < 400 ? 6 : 8,
   },
   empty: {
     flex: 1,
@@ -55,17 +55,17 @@ export const walletStyles = StyleSheet.create({
     marginTop: 8,
   },
   activityList: {
-    marginTop: 24,
+    marginTop: deviceWidth < 400 ? 15 : 24,
   },
   activityItem: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 14,
+    padding: deviceWidth < 400 ? 10 : 14,
     borderWidth: 1,
     borderColor: appColors.border,
-    borderRadius: 16,
-    marginBottom: 20,
+    borderRadius: deviceWidth < 400 ? 10 : 16,
+    marginBottom: deviceWidth < 400 ? 12 : 20,
   },
   iconBox: {
     flexDirection: 'row',
@@ -77,21 +77,22 @@ export const walletStyles = StyleSheet.create({
     width: 35,
     height: 35,
     borderRadius: '50%',
-
     marginRight: 12,
   },
   activityType: {
     textTransform: 'capitalize',
     color: '#1B1C1E',
     fontWeight: 'medium',
-    marginBottom: 14,
-    fontSize: 16,
+    marginBottom: deviceWidth ? 10 : 14,
+    fontSize: deviceWidth < 400 ? 13 : 16,
   },
-  activityDate: {},
+  activityDate: {
+    fontSize: deviceWidth < 400 ? 13 : 14,
+  },
   activityPrice: {
     color: '#1B1C1E',
     fontWeight: 'medium',
-    fontSize: 16,
+    fontSize: deviceWidth < 400 ? 14 : 16,
   },
   modalContent: {
     marginTop: 10,
