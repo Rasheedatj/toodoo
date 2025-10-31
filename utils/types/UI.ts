@@ -105,3 +105,9 @@ export interface MessageProp {
   title: string;
   lastSent: string;
 }
+
+export interface Introduction {
+  id: number;
+  title: string;
+  description: string;
+}

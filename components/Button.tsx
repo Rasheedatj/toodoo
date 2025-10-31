@@ -11,23 +11,27 @@ const Button = ({
   icon,
 }: ButtonProps) => {
   return (
-    <View
-      style={[styles[`${variant}Container`], styles.buttonContainer, style]}
+    <Pressable
+      onPress={onPress}
+      style={({ pressed }) => [
+        pressed && styles.pressed,
+        styles.buttonContainer,
+      ]}
+      android_ripple={{ color: 'red' }}
     >
-      <Pressable
-        onPress={onPress}
-        style={({ pressed }) => [
-          pressed && styles.pressed,
+      <View
+        style={[
+          styles[`${variant}Container`],
           styles.buttonInnerContainer,
+          style,
         ]}
-        android_ripple={{ color: 'red' }}
       >
         <View style={styles.icon}>{icon}</View>
         <Text style={[styles.buttonText, styles[`${variant}Text`]]}>
           {children}
         </Text>
-      </Pressable>
-    </View>
+      </View>
+    </Pressable>
   );
 };
 
@@ -37,8 +41,6 @@ const styles = StyleSheet.create({
   buttonContainer: {
     marginHorizontal: 4,
     marginVertical: deviceWidth < 400 ? 8 : 10,
-    overflow: 'hidden',
-    borderRadius: 8,
   },
 
   buttonInnerContainer: {
@@ -47,6 +49,16 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+    borderRadius: 8,
+  },
+
+  primaryContainer: {
+    backgroundColor: appColors.primary,
+  },
+
+  outlineContainer: {
+    backgroundColor: 'transparent',
+    borderWidth: 2,
   },
 
   icon: {
@@ -61,15 +73,6 @@ const styles = StyleSheet.create({
 
   pressed: {
     opacity: 0.75,
-  },
-
-  primaryContainer: {
-    backgroundColor: appColors.primary,
-  },
-
-  outlineContainer: {
-    backgroundColor: 'transparent',
-    borderWidth: 2,
   },
 
   primaryText: {

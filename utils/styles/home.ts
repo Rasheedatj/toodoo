@@ -215,15 +215,15 @@ export const serviceListStyles = StyleSheet.create({
     marginTop: 24,
   },
   serviceList: {
-    marginTop: 30,
+    marginTop: deviceWidth < 400 ? 15 : 30,
   },
   serviceItem: {
     flexDirection: 'row',
-    padding: 20,
+    padding: deviceWidth < 400 ? 16 : 20,
     borderWidth: 1,
     borderColor: '#E2E8F9',
-    borderRadius: 10,
-    marginBottom: 20,
+    borderRadius: deviceWidth < 400 ? 8 : 10,
+    marginBottom: deviceWidth < 400 ? 12 : 20,
   },
   serviceTitle: {
     width: '50%',

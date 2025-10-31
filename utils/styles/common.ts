@@ -83,7 +83,7 @@ export const commonStyles = StyleSheet.create({
   },
 
   formItem: {
-    marginTop: 35,
+    marginBottom: 25,
   },
   label: {
     marginBottom: 8,

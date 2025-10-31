@@ -9,21 +9,26 @@ import { ScrollView, View } from 'react-native';
 
 export default function Home() {
   return (
-    <View style={tabParentStyles.container}>
-      <HomeProfile />
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+      alwaysBounceVertical={false}
+    >
+      <View style={tabParentStyles.container}>
+        <HomeProfile />
 
-      <HomeSeearch />
+        <HomeSeearch />
 
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        alwaysBounceVertical={false}
-      >
-        <Hero />
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          alwaysBounceVertical={false}
+        >
+          <Hero />
 
-        <ServicesPreview />
-        <ProvidersPreview />
-        <MostBookedServices />
-      </ScrollView>
-    </View>
+          <ServicesPreview />
+          <ProvidersPreview />
+          <MostBookedServices />
+        </ScrollView>
+      </View>
+    </ScrollView>
   );
 }
