@@ -1,17 +1,16 @@
-import Logo from '@/assets/images/Logo';
 import Button from '@/components/Button';
+import LogoComponent from '@/components/Logo';
 import { appColors } from '@/utils/constants/colors';
 import { commonStyles } from '@/utils/styles/common';
-import { Link } from 'expo-router';
+import { Link, useRouter } from 'expo-router';
 import React from 'react';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
 
 const LoginScreen = () => {
+  const router = useRouter();
   return (
     <View style={styles.rootContainer}>
-      <View style={styles.logo}>
-        <Logo />
-      </View>
+      <LogoComponent />
 
       <View style={styles.article}>
         <Text style={styles.title}> Sign in to your Account</Text>
@@ -42,14 +41,19 @@ const LoginScreen = () => {
         </View>
 
         <Text style={styles.forgot}>Forgot Password?</Text>
-        <Button onPress={() => {}} style={{ marginTop: 20 }}>
+        <Button
+          onPress={() => {
+            router.push('/(tabs)/home');
+          }}
+          style={{ marginTop: 20 }}
+        >
           Sign in
         </Button>
       </View>
 
       <Text style={styles.footer}>
         Don&apos;t have an account?{' '}
-        <Link href='/auth/SignUp' style={styles.signUp}>
+        <Link href='/auth/SignUpAs' style={styles.signUp}>
           Sign up
         </Link>
       </Text>
@@ -64,10 +68,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 50,
     flex: 1,
-  },
-
-  logo: {
-    marginBottom: 30,
   },
 
   article: {

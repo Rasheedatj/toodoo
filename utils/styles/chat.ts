@@ -16,7 +16,6 @@ export const chatHomeStyle = StyleSheet.create({
     marginBottom: 14,
   },
 
-  description: { marginLeft: deviceWidth < 400 ? 0 : 10 },
   name: {
     fontWeight: 'medium',
     fontSize: deviceWidth < 400 ? 14 : 16,

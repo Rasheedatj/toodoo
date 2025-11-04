@@ -6,12 +6,9 @@ export const commonStyles = StyleSheet.create({
     marginBlock: 16,
   },
   avatar: {
-    width: deviceWidth < 400 ? 50 : 70,
-    height: deviceWidth < 400 ? 50 : 70,
     marginRight: 16,
     borderWidth: 1,
     borderColor: appColors.primary,
-    borderRadius: deviceWidth < 400 ? 25 : 35,
     backgroundColor: 'red',
     overflow: 'hidden',
   },
@@ -30,7 +27,7 @@ export const commonStyles = StyleSheet.create({
   },
 
   header: {
-    fontWeight: 'medium',
+    fontWeight: 500,
     fontSize: deviceWidth < 400 ? 16 : 20,
     color: '#1A1C1E',
     marginBottom: 10,

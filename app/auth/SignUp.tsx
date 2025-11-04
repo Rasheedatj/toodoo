@@ -1,5 +1,5 @@
-import Logo from '@/assets/images/Logo';
 import Button from '@/components/Button';
+import LogoComponent from '@/components/Logo';
 import { appColors } from '@/utils/constants/colors';
 import { commonStyles } from '@/utils/styles/common';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -28,10 +28,7 @@ const SignUpScreen = () => {
       style={styles.rootContainer}
       showsVerticalScrollIndicator={false}
     >
-      <View style={styles.logo}>
-        <Logo />
-      </View>
-
+      <LogoComponent />
       <Pressable style={styles.back} onPress={() => router.back()}>
         <MaterialCommunityIcons name='chevron-left' size={18} color='#999999' />
         <Text style={styles.backText}>Back</Text>
@@ -128,10 +125,6 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     marginBottom: 10,
     flex: 1,
-  },
-
-  logo: {
-    marginBottom: 30,
   },
 
   back: {

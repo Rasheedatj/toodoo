@@ -38,10 +38,7 @@ const Button = ({
 export default Button;
 
 const styles = StyleSheet.create({
-  buttonContainer: {
-    marginHorizontal: 4,
-    marginVertical: deviceWidth < 400 ? 8 : 10,
-  },
+  buttonContainer: {},
 
   buttonInnerContainer: {
     paddingHorizontal: deviceWidth < 400 ? 10 : 14,
@@ -50,6 +47,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 8,
+    marginHorizontal: 4,
+    marginVertical: deviceWidth < 400 ? 8 : 10,
   },
 
   primaryContainer: {

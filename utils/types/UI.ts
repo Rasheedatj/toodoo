@@ -46,8 +46,9 @@ export interface SuccessProp {
 }
 
 export interface ScreenHeaderProps {
-  title: string;
+  title?: string;
   hasBell?: boolean;
+  isBack?: boolean;
 }
 
 export interface Booking {
@@ -88,10 +89,12 @@ export interface ProfileActionProp {
   title: string;
   text: string;
   rightElement?: ReactNode;
+  path: any;
 }
 export interface TabItem {
   id: string;
   title: string;
+  component?: ReactNode;
 }
 export interface TabProps {
   tabItems: TabItem[];
@@ -110,4 +113,10 @@ export interface Introduction {
   id: number;
   title: string;
   description: string;
+}
+
+export interface AvatarProp {
+  src: string;
+  size?: 'medium' | 'large';
+  style?: any;
 }
