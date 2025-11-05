@@ -1,12 +1,20 @@
 import Check from '@/assets/images/Check';
 import Avatar from '@/components/Avatar';
 import Button from '@/components/Button';
+import RatingCard from '@/components/RatingCard';
 import ScreenHeader from '@/components/ScreenHeader';
 import { appColors } from '@/utils/constants/colors';
 import { FontAwesome, Ionicons, MaterialIcons } from '@expo/vector-icons';
-import { useLocalSearchParams } from 'expo-router';
+import { useLocalSearchParams, useRouter } from 'expo-router';
 import React from 'react';
-import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
+import {
+  Image,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 
 const stats = [
   {
@@ -28,6 +36,7 @@ const stats = [
 
 const ArtisanProfileScreen = () => {
   const { artisanId } = useLocalSearchParams<{ artisanId: string }>();
+  const router = useRouter();
   return (
     <>
       <ScreenHeader isBack={true} />
@@ -59,20 +68,26 @@ const ArtisanProfileScreen = () => {
             </View>
 
             <View style={styles.contactIcons}>
-              <View style={styles.iconView}>
+              <Pressable
+                onPress={() => router.push('/(tabs)/chats/CallingScreen')}
+                style={styles.iconView}
+              >
                 <MaterialIcons
                   name='call'
                   size={24}
                   color={appColors.primary}
                 />
-              </View>
-              <View style={styles.iconView}>
+              </Pressable>
+              <Pressable
+                onPress={() => router.push('/(tabs)/chats/ChatRoom')}
+                style={styles.iconView}
+              >
                 <Ionicons
                   name='chatbubble-ellipses-outline'
                   size={24}
                   color={appColors.primary}
                 />
-              </View>
+              </Pressable>
             </View>
           </View>
 
@@ -120,6 +135,25 @@ const ArtisanProfileScreen = () => {
 
           <View style={styles.section}>
             <Text style={styles.pricingTitle}>Ratings & Reviews</Text>
+
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              pagingEnabled
+            >
+              <RatingCard
+                userName='Oghechi Kanu'
+                review='He is an outstanding artisan with speed in delivery of his quality service. Kind and hardworking man.'
+                rating={3}
+                userPicture='https://images.unsplash.com/photo-1502685104226-ee32379fefbe'
+              />
+              <RatingCard
+                userName='Oghechi Kanu'
+                review='He is an outstanding artisan with speed in delivery of his quality service. Kind and hardworking man.'
+                rating={4}
+                userPicture='https://images.unsplash.com/photo-1502685104226-ee32379fefbe'
+              />
+            </ScrollView>
           </View>
 
           <View style={styles.section}>

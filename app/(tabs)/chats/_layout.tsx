@@ -10,7 +10,26 @@ const ChatLayout = () => {
           backgroundColor: 'white',
         },
       }}
-    ></Stack>
+    >
+      <Stack.Screen
+        name='index'
+        options={{
+          contentStyle: {
+            padding: 16,
+            backgroundColor: 'white',
+          },
+        }}
+      />
+      <Stack.Screen
+        name='CallingScreen'
+        options={{
+          contentStyle: {
+            padding: 16,
+            backgroundColor: 'white',
+          },
+        }}
+      />
+    </Stack>
   );
 };
 

@@ -120,3 +120,17 @@ export interface AvatarProp {
   size?: number;
   style?: any;
 }
+
+export interface ChatMessage {
+  id: string;
+  text: string;
+  time: string;
+  senderName: string;
+  senderImage: string;
+  senderId: string;
+}
+
+export interface Chat {
+  isUser: boolean;
+  message: ChatMessage;
+}

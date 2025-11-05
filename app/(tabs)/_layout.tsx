@@ -20,16 +20,16 @@ const TabLayout = () => {
           shadowOpacity: 0,
           backgroundColor: '#fff',
         },
-        sceneStyle: {
-          backgroundColor: 'white',
-          padding: 16,
-        },
       }}
     >
       <Tabs.Screen
         name='home'
         options={{
           title: 'Home',
+          sceneStyle: {
+            padding: 16,
+            backgroundColor: 'white',
+          },
           tabBarIcon: ({ size, color }) => (
             <MaterialCommunityIcons name='home' size={size} color={color} />
           ),
@@ -39,6 +39,10 @@ const TabLayout = () => {
         name='bookings'
         options={{
           title: 'Bookings',
+          sceneStyle: {
+            padding: 16,
+            backgroundColor: 'white',
+          },
           tabBarIcon: ({ size, color }) => (
             <MaterialCommunityIcons
               name='clipboard-list'
@@ -61,6 +65,10 @@ const TabLayout = () => {
         name='Wallet'
         options={{
           title: 'Wallet',
+          sceneStyle: {
+            padding: 16,
+            backgroundColor: 'white',
+          },
           tabBarIcon: ({ size, color }) => (
             <Ionicons name='wallet-outline' size={size} color={color} />
           ),
@@ -70,6 +78,10 @@ const TabLayout = () => {
         name='profile'
         options={{
           title: 'Profile',
+          sceneStyle: {
+            padding: 16,
+            backgroundColor: 'white',
+          },
           tabBarIcon: ({ size, color }) => (
             <FontAwesome5 name='user' size={size} color={color} />
           ),
