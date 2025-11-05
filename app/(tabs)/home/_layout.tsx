@@ -5,26 +5,12 @@ const HomeLayout = () => {
   return (
     <Stack
       screenOptions={{
+        headerShown: false,
         contentStyle: {
           backgroundColor: 'white',
         },
       }}
-    >
-      <Stack.Screen
-        name='index'
-        options={{
-          title: 'Home ',
-          headerShown: false,
-        }}
-      />
-      <Stack.Screen
-        name='ServicesList'
-        options={{
-          title: 'Services ',
-          headerShown: false,
-        }}
-      />
-    </Stack>
+    />
   );
 };
 

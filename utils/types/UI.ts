@@ -117,6 +117,6 @@ export interface Introduction {
 
 export interface AvatarProp {
   src: string;
-  size?: 'medium' | 'large';
+  size?: number;
   style?: any;
 }

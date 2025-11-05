@@ -13,7 +13,7 @@ const CallingScreen = () => {
         <View style={styles.image}>
           <Avatar
             src='https://images.unsplash.com/photo-1502685104226-ee32379fefbe'
-            size='large'
+            size={200}
             style={{ marginRight: 0 }}
           />
         </View>

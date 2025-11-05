@@ -3,10 +3,12 @@ import { commonStyles } from '@/utils/styles/common';
 import { homeStyles } from '@/utils/styles/home';
 import { ProviderProps } from '@/utils/types/UI';
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
 import { Image, Text, View } from 'react-native';
 import Button from './Button';
 
 const Provider = ({ provider }: { provider: ProviderProps }) => {
+  const router = useRouter();
   const { name, userAvatar, price, location, service, rateAmount, rating } =
     provider;
   return (
@@ -51,7 +53,7 @@ const Provider = ({ provider }: { provider: ProviderProps }) => {
         </View>
       </View>
       <Button
-        onPress={() => {}}
+        onPress={() => router.push(`/(tabs)/home/12`)}
         variant='outline'
         style={{ borderColor: appColors.primary, marginTop: 18 }}
       >
