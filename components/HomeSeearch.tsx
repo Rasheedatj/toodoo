@@ -2,7 +2,7 @@ import { homeStyles } from '@/utils/styles/home';
 import { Feather } from '@expo/vector-icons';
 import React, { useState } from 'react';
 import { Pressable, Text } from 'react-native';
-import SearchModal from './SearchModal';
+import SearchModal from './modals/SearchModal';
 
 const HomeSeearch = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);

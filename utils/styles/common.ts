@@ -1,9 +1,16 @@
 import { StyleSheet } from 'react-native';
-import { appColors } from '../constants/colors';
+import { appColors, deviceWidth } from '../constants/colors';
 
 export const commonStyles = StyleSheet.create({
   container: {
     marginBlock: 16,
+  },
+  avatar: {
+    marginRight: 16,
+    borderWidth: 1,
+    borderColor: appColors.primary,
+    backgroundColor: 'red',
+    overflow: 'hidden',
   },
   fullModal: {
     padding: 16,
@@ -13,7 +20,6 @@ export const commonStyles = StyleSheet.create({
     padding: 16,
     paddingTop: 35,
     paddingBottom: 100,
-    // height: 400,
     backgroundColor: 'white',
     marginTop: 'auto',
     borderTopLeftRadius: 20,
@@ -21,8 +27,8 @@ export const commonStyles = StyleSheet.create({
   },
 
   header: {
-    fontWeight: 'medium',
-    fontSize: 20,
+    fontWeight: 500,
+    fontSize: deviceWidth < 400 ? 16 : 20,
     color: '#1A1C1E',
     marginBottom: 10,
   },
@@ -36,7 +42,7 @@ export const commonStyles = StyleSheet.create({
 
   previewHeaderText: {
     fontWeight: 'bold',
-    fontSize: 24,
+    fontSize: deviceWidth < 400 ? 19 : 24,
     color: '#3D3F33',
   },
 
@@ -74,7 +80,7 @@ export const commonStyles = StyleSheet.create({
   },
 
   formItem: {
-    marginTop: 35,
+    marginBottom: 25,
   },
   label: {
     marginBottom: 8,
@@ -91,6 +97,6 @@ export const commonStyles = StyleSheet.create({
   viewLink: {
     color: '#88898F',
     fontWeight: 'medium',
-    fontSize: 18,
+    fontSize: deviceWidth < 400 ? 14 : 18,
   },
 });

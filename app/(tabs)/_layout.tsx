@@ -12,9 +12,6 @@ const TabLayout = () => {
     <Tabs
       screenOptions={{
         headerShown: false,
-        headerStyle: {
-          backgroundColor: 'red',
-        },
         tabBarActiveTintColor: appColors.primary,
         tabBarInactiveTintColor: '#999999',
         tabBarStyle: {
@@ -23,25 +20,29 @@ const TabLayout = () => {
           shadowOpacity: 0,
           backgroundColor: '#fff',
         },
-        sceneStyle: {
-          backgroundColor: '#fff',
-        },
       }}
     >
       <Tabs.Screen
-        name='index'
+        name='home'
         options={{
           title: 'Home',
+          sceneStyle: {
+            padding: 16,
+            backgroundColor: 'white',
+          },
           tabBarIcon: ({ size, color }) => (
             <MaterialCommunityIcons name='home' size={size} color={color} />
           ),
         }}
       ></Tabs.Screen>
       <Tabs.Screen
-        name='bookings/index'
-        // name='Bookings'
+        name='bookings'
         options={{
           title: 'Bookings',
+          sceneStyle: {
+            padding: 16,
+            backgroundColor: 'white',
+          },
           tabBarIcon: ({ size, color }) => (
             <MaterialCommunityIcons
               name='clipboard-list'
@@ -52,7 +53,7 @@ const TabLayout = () => {
         }}
       ></Tabs.Screen>
       <Tabs.Screen
-        name='Chats'
+        name='chats'
         options={{
           title: 'Chats',
           tabBarIcon: ({ size, color }) => (
@@ -64,15 +65,23 @@ const TabLayout = () => {
         name='Wallet'
         options={{
           title: 'Wallet',
+          sceneStyle: {
+            padding: 16,
+            backgroundColor: 'white',
+          },
           tabBarIcon: ({ size, color }) => (
             <Ionicons name='wallet-outline' size={size} color={color} />
           ),
         }}
       ></Tabs.Screen>
       <Tabs.Screen
-        name='Profile'
+        name='profile'
         options={{
           title: 'Profile',
+          sceneStyle: {
+            padding: 16,
+            backgroundColor: 'white',
+          },
           tabBarIcon: ({ size, color }) => (
             <FontAwesome5 name='user' size={size} color={color} />
           ),

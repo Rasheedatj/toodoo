@@ -1,10 +1,10 @@
 import { StyleSheet } from 'react-native';
-import { appColors } from '../constants/colors';
+import { appColors, deviceWidth } from '../constants/colors';
 
 export const bookingsStyle = StyleSheet.create({
   menu: {
     flexDirection: 'row',
-    marginTop: 60,
+    marginTop: deviceWidth < 400 ? 20 : 60,
   },
   menuItem: {
     paddingHorizontal: 10,
@@ -19,9 +19,11 @@ export const bookingsStyle = StyleSheet.create({
     color: '#3D3F33',
     fontWeight: 'medium',
   },
+
   bookingList: {
     marginTop: 20,
   },
+
   bookingItem: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -31,10 +33,26 @@ export const bookingsStyle = StyleSheet.create({
     borderRadius: 10,
     marginBottom: 20,
   },
-  bookingImage: {
-    width: 80,
-    height: 80,
-    objectFit: 'contain',
+
+  serviceImage: {
+    width: '12%',
+    height: 40,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  providerCharge: {
+    flexDirection: 'row',
+    marginVertical: 14,
+  },
+
+  provChar: {
+    flex: 1,
+    margin: 10,
+  },
+
+  arrow: {
+    width: '5%',
   },
   bookingDetails: {
     flex: 1,
@@ -42,19 +60,35 @@ export const bookingsStyle = StyleSheet.create({
   },
   bookingService: {
     fontWeight: 'semibold',
-    fontSize: 18,
+    fontSize: deviceWidth < 400 ? 15 : 18,
     color: '#333333',
     textTransform: 'capitalize',
   },
+
+  serviceDateContainer: {
+    flexDirection: 'row',
+    marginVertical: deviceWidth < 400 ? 10 : 14,
+  },
+
+  serviceDate: {
+    flex: 1,
+    textTransform: 'capitalize',
+    color: appColors['text-gray'],
+    fontWeight: 'medium',
+    fontSize: deviceWidth < 400 ? 13 : 14,
+  },
+
   bookingChargeBox: {
     color: appColors['text-gray'],
     marginVertical: 10,
   },
+
   bookingCharge: {
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: 'bold',
     color: appColors['text-gray'],
-    paddingLeft: 10,
+    textTransform: 'capitalize',
+    marginVertical: 14,
   },
   itemFooter: {
     flexDirection: 'row',
@@ -63,11 +97,12 @@ export const bookingsStyle = StyleSheet.create({
   status: {
     textTransform: 'capitalize',
     marginRight: 8,
-    paddingVertical: 4,
-    paddingHorizontal: 10,
+    paddingVertical: deviceWidth < 400 ? 3 : 4,
+    paddingHorizontal: deviceWidth < 400 ? 8 : 10,
     fontWeight: 'semibold',
     borderRadius: 20,
     textAlign: 'center',
+    fontSize: deviceWidth < 400 ? 13 : 15,
   },
 });
 

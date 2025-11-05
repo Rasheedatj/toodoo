@@ -1,8 +1,8 @@
-import User from '@/assets/images/user';
 import { profileHomeStyles } from '@/utils/styles/profile';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import React from 'react';
 import { ImageBackground, Pressable, Text, View } from 'react-native';
+import Avatar from './Avatar';
 
 const ProfileHero = () => {
   return (
@@ -12,7 +12,7 @@ const ProfileHero = () => {
       resizeMode='contain'
       imageStyle={{ opacity: 0.3 }}
     >
-      <User />
+      <Avatar src='https://images.unsplash.com/photo-1502685104226-ee32379fefbe' />
       <View style={profileHomeStyles.article}>
         <Text style={profileHomeStyles.articleHeader}>Itunuoluwa Abidoye</Text>
         <Text style={profileHomeStyles.articleText}>

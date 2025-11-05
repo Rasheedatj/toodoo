@@ -5,48 +5,72 @@ import { Service } from '@/utils/types/UI';
 import { useNavigation } from 'expo-router';
 import React from 'react';
 import { FlatList, Text, View } from 'react-native';
-import BackHeader from '../components/BackHeader';
+import BackHeader from '../../../components/BackHeader';
 
 const services: Service[] = [
   {
     id: '123',
     title: 'Cleaner',
     providers: 4,
+    rating: 4.5,
+    rateAmount: 10,
+    price: 1000,
   },
   {
     id: '133',
     title: 'Cleaner',
     providers: 1,
+    rating: 4.5,
+    rateAmount: 10,
+    price: 1000,
   },
   {
     id: '143',
     title: 'Cleaner',
     providers: 5,
+    rating: 4.5,
+    rateAmount: 10,
+    price: 1000,
   },
   {
     id: '144',
     title: 'Cleaner',
     providers: 5,
+    rating: 4.5,
+    rateAmount: 10,
+    price: 1000,
   },
   {
     id: '145',
     title: 'Cleaner',
     providers: 5,
+    rating: 4.5,
+    rateAmount: 10,
+    price: 1000,
   },
   {
     id: '146',
     title: 'Cleaner',
     providers: 5,
+    rating: 4.5,
+    rateAmount: 10,
+    price: 1000,
   },
   {
     id: '147',
     title: 'Cleaner',
     providers: 5,
+    rating: 4.5,
+    rateAmount: 10,
+    price: 1000,
   },
   {
     id: '148',
     title: 'Cleaner',
     providers: 5,
+    rating: 4.5,
+    rateAmount: 10,
+    price: 1000,
   },
 ];
 

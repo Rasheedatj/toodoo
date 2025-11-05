@@ -3,10 +3,10 @@ import { ModalProps } from '@/utils/types/UI';
 import { BlurView } from 'expo-blur';
 import React, { useState } from 'react';
 import { Modal, View } from 'react-native';
-import Back from './Back';
-import Deposit from './Deposit';
-import Success from './Success';
-import Withdraw from './Withdraw';
+import Back from '../Back';
+import Deposit from '../Deposit';
+import Success from '../Success';
+import Withdraw from '../Withdraw';
 
 const WalletModal = ({ onClose, isOpen, type = 'deposit' }: ModalProps) => {
   const [isSuccessful, setIsSuccessful] = useState(false);

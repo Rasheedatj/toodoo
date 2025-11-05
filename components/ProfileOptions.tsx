@@ -2,8 +2,9 @@ import { appColors } from '@/utils/constants/colors';
 import { profileHomeStyles } from '@/utils/styles/profile';
 import { ProfileActionProp } from '@/utils/types/UI';
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Pressable, Text, View } from 'react-native';
 
 const profileAction: ProfileActionProp[] = [
   {
@@ -16,6 +17,7 @@ const profileAction: ProfileActionProp[] = [
     ),
     title: 'Favourite',
     text: 'List of favourite',
+    path: '/(tabs)/profile/Refer',
   },
   {
     icon: (
@@ -27,6 +29,7 @@ const profileAction: ProfileActionProp[] = [
     ),
     title: 'Help & support',
     text: 'Contact Support',
+    path: '/(tabs)/profile/Refer',
   },
   {
     icon: (
@@ -34,6 +37,7 @@ const profileAction: ProfileActionProp[] = [
     ),
     title: 'Language',
     text: 'Choose your language',
+    path: '/(tabs)/profile/Refer',
   },
   {
     icon: (
@@ -45,6 +49,7 @@ const profileAction: ProfileActionProp[] = [
     ),
     title: 'Refer & Earn',
     text: 'Refer and earn easily',
+    path: '/(tabs)/profile/Refer',
   },
   {
     icon: (
@@ -56,14 +61,20 @@ const profileAction: ProfileActionProp[] = [
     ),
     title: 'Subscription',
     text: 'Manage your subscription',
+    path: '/(tabs)/profile/Refer',
   },
 ];
 
 const ProfileOptions = () => {
+  const router = useRouter();
   return (
     <View style={profileHomeStyles.optionsContainer}>
       {profileAction.map((action, index) => (
-        <View key={action.title + index} style={profileHomeStyles.option}>
+        <Pressable
+          onPress={() => router.push(action.path)}
+          key={action.title + index}
+          style={profileHomeStyles.option}
+        >
           <View style={profileHomeStyles.icon}>{action.icon}</View>
 
           <View style={profileHomeStyles.optionArticle}>
@@ -77,7 +88,7 @@ const ProfileOptions = () => {
             color={appColors['text-gray']}
             size={18}
           />
-        </View>
+        </Pressable>
       ))}
 
       <View style={profileHomeStyles.option}>

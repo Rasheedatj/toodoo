@@ -9,7 +9,7 @@ import React, { useState } from 'react';
 import { Alert, ScrollView, Text, View } from 'react-native';
 import BackHeader from './BackHeader';
 import Button from './Button';
-import CancelBooking from './CancelBooking';
+import CancelBooking from './modals/CancelBooking';
 import ReportProvider from './ReportProvider';
 import Status from './Status';
 

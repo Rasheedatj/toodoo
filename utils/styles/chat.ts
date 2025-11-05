@@ -1,9 +1,9 @@
 import { StyleSheet } from 'react-native';
-import { appColors } from '../constants/colors';
+import { appColors, deviceWidth } from '../constants/colors';
 
 export const chatHomeStyle = StyleSheet.create({
   messageList: {
-    marginTop: 28,
+    marginTop: deviceWidth ? 20 : 28,
   },
 
   message: {
@@ -16,18 +16,19 @@ export const chatHomeStyle = StyleSheet.create({
     marginBottom: 14,
   },
 
-  description: { marginLeft: 10 },
   name: {
     fontWeight: 'medium',
-    fontSize: 16,
+    fontSize: deviceWidth < 400 ? 14 : 16,
   },
   lastMessage: {
-    marginVertical: 5,
+    marginVertical: deviceWidth < 400 ? 3 : 5,
     color: appColors['text-gray'],
+    fontSize: deviceWidth < 400 ? 13 : 14,
   },
   time: {
     color: appColors.primary,
     fontWeight: 'medium',
+    fontSize: deviceWidth < 400 ? 13 : 14,
   },
 
   pressed: {

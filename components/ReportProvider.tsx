@@ -3,10 +3,24 @@ import { commonStyles } from '@/utils/styles/common';
 import { ModalProps } from '@/utils/types/UI';
 import { BlurView } from 'expo-blur';
 import React from 'react';
-import { Modal, Text, TextInput, View } from 'react-native';
+import { Alert, Modal, Text, TextInput, View } from 'react-native';
 import Back from './Back';
+import Button from './Button';
 
-const ReportProvider = ({ isOpen, onClose }: ModalProps) => {
+const ReportProvider = ({ isOpen, onClose, bookingId }: ModalProps) => {
+  const handleSubmitReport = () => {
+    Alert.alert(
+      'Report submitted',
+      `Your report for booking #${bookingId} has been submitted`,
+      [
+        {
+          text: 'Ok',
+          style: 'default',
+          onPress: onClose,
+        },
+      ]
+    );
+  };
   return (
     <Modal visible={isOpen} transparent={true}>
       <View style={{ backgroundColor: '#33333333', flex: 1 }}>
@@ -30,6 +44,10 @@ const ReportProvider = ({ isOpen, onClose }: ModalProps) => {
               <Text style={commonStyles.label}>Description</Text>
               <TextInput style={commonStyles.input} placeholder='' />
             </View>
+
+            <Button onPress={handleSubmitReport} style={{ marginTop: 50 }}>
+              Submit report
+            </Button>
           </View>
         </BlurView>
       </View>

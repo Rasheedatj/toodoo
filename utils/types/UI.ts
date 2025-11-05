@@ -4,6 +4,7 @@ export interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   type?: string;
+  bookingId?: string;
 }
 
 export interface RecentSearch {
@@ -45,41 +46,39 @@ export interface SuccessProp {
 }
 
 export interface ScreenHeaderProps {
-  title: string;
+  title?: string;
   hasBell?: boolean;
+  isBack?: boolean;
 }
 
 export interface Booking {
   id: string;
-  serviceImage: ReactNode;
+  serviceImage: string;
   charge: number;
   service: string;
-  location?: string;
   status: string;
-}
-
-export interface ProviderProps {
-  id: string;
-  name: string;
-  userAvatar: ReactNode;
-  location: string;
-  rating: number;
-  rateAmount: number;
-  price: number;
-  service?: string;
-}
-
-export interface BookingDetails extends Booking {
   description: string;
   date: string;
   address: string;
   provider: ProviderProps;
 }
+
+export interface ProviderProps {
+  id: string;
+  name: string;
+  userAvatar: string;
+  location: string;
+  rating: number;
+  rateAmount: number;
+  price: number;
+  service: string;
+}
+
 type ButtonVariant = 'primary' | 'outline';
 
 export interface ButtonProps {
   children: ReactNode;
-  onPress: () => void;
+  onPress?: () => void;
   variant?: ButtonVariant;
   style?: any;
   icon?: ReactNode;
@@ -90,10 +89,12 @@ export interface ProfileActionProp {
   title: string;
   text: string;
   rightElement?: ReactNode;
+  path: any;
 }
 export interface TabItem {
   id: string;
   title: string;
+  component?: ReactNode;
 }
 export interface TabProps {
   tabItems: TabItem[];
@@ -106,4 +107,30 @@ export interface MessageProp {
   name: string;
   title: string;
   lastSent: string;
+}
+
+export interface Introduction {
+  id: number;
+  title: string;
+  description: string;
+}
+
+export interface AvatarProp {
+  src: string;
+  size?: number;
+  style?: any;
+}
+
+export interface ChatMessage {
+  id: string;
+  text: string;
+  time: string;
+  senderName: string;
+  senderImage: string;
+  senderId: string;
+}
+
+export interface Chat {
+  isUser: boolean;
+  message: ChatMessage;
 }
