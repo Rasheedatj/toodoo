@@ -1,17 +1,20 @@
 import { chatHomeStyle } from '@/utils/styles/chat';
 import { MessageProp } from '@/utils/types/UI';
+import { useRouter } from 'expo-router';
 import React from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Avatar from './Avatar';
 
 const Message = ({ message }: { message: MessageProp }) => {
   const { name, title, lastSent } = message;
+  const router = useRouter();
   return (
     <Pressable
       style={({ pressed }) => [
         chatHomeStyle.message,
         pressed && chatHomeStyle.pressed,
       ]}
+      onPress={() => router.push('/(tabs)/chats/17')}
     >
       <Avatar src='https://images.unsplash.com/photo-1502685104226-ee32379fefbe' />
 

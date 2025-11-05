@@ -7,6 +7,7 @@ import {
   MaterialCommunityIcons,
   SimpleLineIcons,
 } from '@expo/vector-icons';
+import { useLocalSearchParams } from 'expo-router';
 import React from 'react';
 import { FlatList, StyleSheet, Text, TextInput, View } from 'react-native';
 
@@ -101,10 +102,13 @@ const messages: ChatMessage[] = [
   },
 ];
 const ChatRoomScreen = () => {
+  const { chatId } = useLocalSearchParams<{ chatId: string }>();
   const userId = 'me123';
   return (
     <View style={styles.parent}>
-      <ScreenHeader isBack={true} />
+      <View style={styles.back}>
+        <ScreenHeader isBack={true} />
+      </View>
 
       <Text style={styles.name}>Oghechi Kanu</Text>
 
@@ -144,6 +148,9 @@ const ChatRoomScreen = () => {
 export default ChatRoomScreen;
 
 const styles = StyleSheet.create({
+  back: {
+    paddingHorizontal: 16,
+  },
   parent: {
     flex: 1,
   },

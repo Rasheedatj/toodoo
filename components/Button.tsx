@@ -58,6 +58,7 @@ const styles = StyleSheet.create({
   outlineContainer: {
     backgroundColor: 'transparent',
     borderWidth: 2,
+    borderColor: appColors.primary,
   },
 
   icon: {

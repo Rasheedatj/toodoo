@@ -1,7 +1,7 @@
 import Balance from '@/components/Balance';
+import WalletModal from '@/components/modals/WalletModal';
 import RecentActivities from '@/components/RecentActivities';
 import ScreenHeader from '@/components/ScreenHeader';
-import WalletModal from '@/components/WalletModal';
 import { tabParentStyles } from '@/utils/styles';
 import { walletStyles } from '@/utils/styles/wallet';
 import { WalletAction } from '@/utils/types/UI';

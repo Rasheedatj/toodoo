@@ -1,8 +1,9 @@
 import SvgComponent from '@/assets/images/user';
-import BackHeader from '@/components/BackHeader';
 import Button from '@/components/Button';
-import CancelBooking from '@/components/CancelBooking';
+import CancelBooking from '@/components/modals/CancelBooking';
+import ReviewBooking from '@/components/modals/ReviewBooking';
 import ReportProvider from '@/components/ReportProvider';
+import ScreenHeader from '@/components/ScreenHeader';
 import Status from '@/components/Status';
 import { appColors } from '@/utils/constants/colors';
 import { bookings } from '@/utils/dummyData';
@@ -17,6 +18,7 @@ import { Alert, Pressable, ScrollView, Text, View } from 'react-native';
 const Booking = () => {
   const [isCancelVisible, setIsCancelVisible] = useState(false);
   const [isReportVisible, setIsReportVisible] = useState(false);
+  const [isReviewVisible, setIsReviewVisible] = useState(false);
   const router = useRouter();
   const { id } = useLocalSearchParams();
 
@@ -26,7 +28,7 @@ const Booking = () => {
     booking;
   return (
     <View>
-      <BackHeader onClick={() => router.back()} />
+      <ScreenHeader isBack={true} />
       <View style={{ paddingBottom: 80 }}>
         <ScrollView
           showsVerticalScrollIndicator={false}
@@ -35,6 +37,7 @@ const Booking = () => {
           <Text style={[commonStyles.header, { paddingBottom: 40 }]}>
             Booking #{id}
           </Text>
+
           <View style={bookingDetStyle.service}>
             <View>
               <Text style={bookingDetStyle.serviceText}>{service} service</Text>
@@ -50,6 +53,7 @@ const Booking = () => {
             </Pressable>
           </View>
 
+          {/* JOB DESCRIPTION */}
           <View style={bookingDetStyle.section}>
             <Text style={bookingDetStyle.title}>Job Description</Text>
             <Text style={bookingDetStyle.descriptionArticle}>
@@ -57,6 +61,7 @@ const Booking = () => {
             </Text>
           </View>
 
+          {/* JOB DATA (e.g date, amount) */}
           <View style={[bookingDetStyle.section]}>
             <View style={{ flexDirection: 'row' }}>
               <View style={bookingDetStyle.sectionBox}>
@@ -87,6 +92,7 @@ const Booking = () => {
             </View>
           </View>
 
+          {/* ABOUT PROVIDER */}
           <View style={bookingDetStyle.provider}>
             <Text style={bookingDetStyle.title}>Service Provider</Text>
 
@@ -126,41 +132,50 @@ const Booking = () => {
                 </View>
               </View>
             </View>
+          </View>
 
-            <View style={bookingDetStyle.buttons}>
-              {status === 'completed' ? (
-                <Button onPress={() => {}}>Reorder again</Button>
-              ) : status === 'pending' ? (
-                <>
-                  <Button
-                    onPress={() =>
-                      Alert.alert(
-                        'Completed!',
-                        'This booking is now completed',
-                        [
-                          {
-                            text: 'Ok',
-                            onPress: () => router.push('/(tabs)/bookings'),
-                          },
-                        ]
-                      )
-                    }
-                    style={{ flex: 1 }}
-                  >
-                    Mark as done
-                  </Button>
-                  <Button
-                    onPress={() => setIsCancelVisible(true)}
-                    style={{ flex: 1, borderColor: 'red' }}
-                    variant='outline'
-                  >
-                    Cancel Booking
-                  </Button>
-                </>
-              ) : (
-                ''
-              )}
-            </View>
+          {/* BUTTONS */}
+          <View style={bookingDetStyle.buttons}>
+            {status === 'completed' ? (
+              <>
+                <Button style={{ flex: 1 }} onPress={() => {}}>
+                  Reorder again
+                </Button>
+                <Button
+                  variant='outline'
+                  onPress={() => {
+                    setIsReviewVisible(true);
+                  }}
+                >
+                  Review service
+                </Button>
+              </>
+            ) : status === 'pending' ? (
+              <>
+                <Button
+                  onPress={() =>
+                    Alert.alert('Completed!', 'This booking is now completed', [
+                      {
+                        text: 'Ok',
+                        onPress: () => router.push('/(tabs)/bookings'),
+                      },
+                    ])
+                  }
+                  style={{ flex: 1 }}
+                >
+                  Mark as done
+                </Button>
+                <Button
+                  onPress={() => setIsCancelVisible(true)}
+                  style={{ flex: 1, borderColor: 'red' }}
+                  variant='outline'
+                >
+                  Cancel Booking
+                </Button>
+              </>
+            ) : (
+              ''
+            )}
           </View>
         </ScrollView>
       </View>
@@ -173,6 +188,10 @@ const Booking = () => {
         isOpen={isReportVisible}
         onClose={() => setIsReportVisible(false)}
         bookingId={id.toString()}
+      />
+      <ReviewBooking
+        isOpen={isReviewVisible}
+        onClose={() => setIsReviewVisible(false)}
       />
     </View>
   );

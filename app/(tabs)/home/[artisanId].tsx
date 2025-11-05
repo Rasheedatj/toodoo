@@ -40,7 +40,10 @@ const ArtisanProfileScreen = () => {
   return (
     <>
       <ScreenHeader isBack={true} />
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        style={{ marginTop: 20 }}
+      >
         <View style={styles.main}>
           <View style={styles.summary}>
             <Avatar
@@ -79,7 +82,7 @@ const ArtisanProfileScreen = () => {
                 />
               </Pressable>
               <Pressable
-                onPress={() => router.push('/(tabs)/chats/ChatRoom')}
+                onPress={() => router.push('/(tabs)/chats/19')}
                 style={styles.iconView}
               >
                 <Ionicons

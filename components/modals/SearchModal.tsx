@@ -5,7 +5,7 @@ import { ModalProps, RecentSearch } from '@/utils/types/UI';
 import { Feather } from '@expo/vector-icons';
 import React, { useState } from 'react';
 import { Modal, Pressable, Text, TextInput, View } from 'react-native';
-import BackHeader from './BackHeader';
+import BackHeader from '../BackHeader';
 
 const searches = [
   { title: 'carpentry 1', id: '244' },

@@ -78,7 +78,7 @@ type ButtonVariant = 'primary' | 'outline';
 
 export interface ButtonProps {
   children: ReactNode;
-  onPress: () => void;
+  onPress?: () => void;
   variant?: ButtonVariant;
   style?: any;
   icon?: ReactNode;

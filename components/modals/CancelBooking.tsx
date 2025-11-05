@@ -5,8 +5,8 @@ import { BlurView } from 'expo-blur';
 import { useRouter } from 'expo-router';
 import React from 'react';
 import { Alert, Modal, Text, View } from 'react-native';
-import Back from './Back';
-import Button from './Button';
+import Back from '../Back';
+import Button from '../Button';
 
 const CancelBooking = ({ isOpen, onClose }: ModalProps) => {
   const router = useRouter();
@@ -31,10 +31,6 @@ const CancelBooking = ({ isOpen, onClose }: ModalProps) => {
               <Text style={cancelStyles.warning}>
                 Cancelling your appointment might result in fees deducted.
               </Text>
-
-              <Button onPress={() => {}} style={{ flex: 1 }}>
-                No, Keep appointment
-              </Button>
             </View>
 
             <View>

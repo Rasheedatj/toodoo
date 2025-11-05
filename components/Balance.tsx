@@ -27,7 +27,6 @@ const Balance = ({ onOpenModal, onSetModal }: BalanceProp) => {
             onOpenModal();
             onSetModal('deposit');
           }}
-          style={{ flex: 1 }}
           icon={<Feather name='arrow-down-left' size={18} color='white' />}
         >
           Deposit
@@ -37,7 +36,7 @@ const Balance = ({ onOpenModal, onSetModal }: BalanceProp) => {
             onOpenModal();
             onSetModal('withdraw');
           }}
-          style={{ flex: 1, borderColor: appColors.primary }}
+          style={{ borderColor: appColors.primary }}
           variant='outline'
           icon={
             <Feather
